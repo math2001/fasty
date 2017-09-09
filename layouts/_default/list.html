@@ -1,0 +1,19 @@
+I'm listing content!
+
+<pre>
+Kind: {{ .Kind }}
+List: {{ .Page }}
+{{ .Data.Pages }}
+</pre>
+
+<h1>Listing {{ .Kind }}</h1>
+
+<ul>
+    {{ range .Data.Pages }}
+        {{ if not .Draft }}
+            <li><a href="{{ .Permalink }}">{{ .Title }}</a> (~ {{ printf "%#v" .ReadingTime }} min read)</li>
+        {{ end }}
+    {{ end }}
+</ul>
+
+{{ printf "%#v" . }}

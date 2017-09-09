@@ -1,0 +1,12 @@
+<html lang="{{ with .Site.LanguageCode }}{{ . }}{{ else }}en-US{{ end }}">
+<head>
+    {{ .Hugo.Generator }}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }} - {{ .Site.Title }}</title>
+</head>
+<body>
+    <header>
+        <h2>{{ .Site.Title }}</h2>
+    </header>
+

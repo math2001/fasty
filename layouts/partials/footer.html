@@ -1,0 +1,8 @@
+<footer>
+    {{ with .Site.Params.footer }}<p>{{ . }}</p>{{ else }}
+        <p class="error">No footer has been specified in <code>params</code>! See the documentation</p>
+    {{ end }}
+</footer>
+
+</body>
+</html>
