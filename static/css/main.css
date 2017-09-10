@@ -52,6 +52,24 @@ header a {
   outline: none;
 }
 
+.tags {
+  list-style: none;
+  padding: 0;
+}
+
+.tags a {
+  color: #888;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 1px 5px;
+  font-size: 90%;
+}
+
+.tags a:hover {
+  border-color: #aaa;
+  color: #555;
+}
+
 .page-top {
   display: flex;
   justify-content: center;
@@ -65,26 +83,32 @@ header a {
 
 .page-categories {
   padding: 0;
+}
+
+.categories {
   list-style: none;
 }
 
-.page-categories::after,
-.page-categories::before {
+.categories a::after,
+.categories a::before {
   content: "{";
+  margin-right: 5px;
   display: inline-block;
   color: #888;
 }
 
-.page-categories::after {
+.categories a::after {
   content: "}";
+  margin: 0;
+  margin-left: 5px;
 }
 
-.page-categories a {
+.categories a {
   color: var(--color);
   text-decoration: none;
 }
 
-.page-categories a:hover {
+.categories a:hover {
   color: #000;
   text-decoration: underline;
 }
@@ -104,8 +128,6 @@ header a {
 }
 
 .page-tags {
-  list-style: none;
-  padding: 0;
   text-align: center;
   flex-basis: 100%;
   margin: 0;
@@ -113,19 +135,6 @@ header a {
 
 .page-tags li {
   display: inline-block;
-}
-
-.page-tags a {
-  color: #888;
-  text-decoration: none;
-  border: 1px solid #ccc;
-  padding: 1px 5px;
-  font-size: 90%;
-}
-
-.page-tags a:hover {
-  border-color: #aaa;
-  color: #555;
 }
 
 .page-bottom {
@@ -146,7 +155,7 @@ footer {
 
 /* lists pages */
 
-.list-top {
+.list-top, .terms-top {
   text-align: center;
 }
 
@@ -197,6 +206,18 @@ footer {
 
 .list-separator:last-of-type {
   display: none;
+}
+
+.terms-content {
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  columns: auto 10em;
+}
+
+.terms-tags,
+.terms-categories {
+  margin: 0;
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */

@@ -1,11 +1,15 @@
 {{ partial "header" . }}
 
-<h1>{{ .Data.Singular | title }} list</h1>
+<div class="terms-top">
+    <h1>{{ .Data.Singular | title }} list</h1>
+</div>
 
-<ul>
-    {{ range .Data.Terms.ByCount }}
-    <li><a href="{{ .Name | urlize }}"><code>{{ .Name }}</code> ({{ .Count }})</a></li>
-    {{ end  }}
-</ul>
+<div class="terms-content">
+    <ul class="{{ .Data.Plural }} terms-{{ .Data.Plural }}">
+        {{ range .Data.Terms.Alphabetical }}
+        <li>({{ .Count }}) <a href="{{ .Name | urlize }}">{{ .Name }}</a></li>
+        {{ end  }}
+    </ul>
+</div>
 
 {{ partial "footer" . }}

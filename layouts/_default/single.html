@@ -4,13 +4,13 @@
 <div class="page-top">
     <h1 class="page-title">{{ .Title }}</h1>
     {{ with .Params.Categories }}
-    <ul class="page-categories">
-        {{ range .Params.Categories }}
+    <ul class="page-categories categories">
+        {{ range . }}
         <li><a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
         {{ end }}
     </ul>
     {{ end }}
-    <ul class="page-tags">
+    <ul class="page-tags tags">
         {{ range .Params.Tags }}
         <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
         {{ end }}
