@@ -1,25 +1,27 @@
 {{ partial "header" . }}
 
-<h1 class="post page-title">{{ .Title }}</h1>
 
-<ul>
-    {{ range .Params.Categories }}
-    <li><a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-    {{ end }}
-</ul>
+<div class="page-top">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <ul class="page-categories">
+        {{ range .Params.Categories }}
+        <li><a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+</div>
 
-<section class="post page-content">
+<section class="page-content">
     {{- .Content -}}
 </section>
 
-
-
-<ul>
-    {{ range .Params.Tags }}
-    <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-    {{ end }}
-</ul>
-
-<p class="post page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
+<div class="page-bottom">
+    <ul class="page-tags">
+        {{ range .Params.Tags }}
+        <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+    </ul>
+    
+    <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
+</div>
 
 {{ partial "footer" . }}

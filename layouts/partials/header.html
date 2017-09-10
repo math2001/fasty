@@ -10,21 +10,42 @@
     <meta name="keywords" content="{{ . }}">
     {{ end }}
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
+
+    <style type="text/css">
+    :root {
+        --page-bg: #eef7fa;
+        --header-bg: #555;
+        --monospace: Inconsolata, menlo, consolas;
+        --color: #333;
+    }
+
+    body {
+        font-family: var(--monospace);
+        margin: 0;
+        background: var(--page-bg);
+    }
+    </style>
+
 </head>
 <body>
     <header>
-        <h2><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
+        <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
         {{ $currentPage := . }}
         {{ with .Site.Menus.main }}
-            <nav>
-                <ul>
+            <nav class="nav">
+                <ul class="nav-list">
                     {{ range . }}
-                    {{ if eq (string .Pre) "|" }}
-                    <li class="menu-separator"></li>
-                    {{ end }}
-                    <li class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}menu-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+                        {{ if eq (string .Pre) "|" }}
+                            <li class="nav-list-item nav-separator"></li>
+                        {{ end }}
+                        <li class="nav-list-item {{ if eq $currentPage.Section .Identifier }} nav-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 </ul>
+                {{ with $currentPage.Site.Params.SearchEnabled }}
+                    <div class="header-search">
+                        <input type="search">
+                    </div>
+                {{ end }}
             </nav>
         {{ end }}
     </header>

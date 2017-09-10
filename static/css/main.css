@@ -1,0 +1,103 @@
+header {
+  background-color: hsl(194, 7%, 10%);
+  padding: 5px 10px;
+  display: flex;
+  align-items: baseline;
+  --header-color: #ccc;
+  color: var(--header-color);
+}
+
+header a {
+  color: var(--header-color);
+  text-decoration: none;
+}
+
+.header-brand {
+  margin-right: 10px;
+}
+
+.nav-list {
+  padding: 0;
+  list-style: none;
+}
+
+.nav-list-item {
+  display: inline-block;
+}
+
+.page-content {
+  width: 750px;
+  max-width: 100%;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  text-align: justify;
+  box-shadow: 5px 5px 20px #bbb;
+}
+
+.page-top {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.page-title {
+  margin-right: 10px;
+}
+
+.page-categories {
+  padding: 0;
+  list-style: none;
+}
+
+.page-categories::after,
+.page-categories::before {
+  content: "{";
+  display: inline-block;
+  color: #888;
+}
+
+.page-categories::after {
+  content: "}";
+}
+
+.page-categories a {
+  color: var(--color);
+  text-decoration: none;
+}
+
+.page-categories a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+.page-categories li {
+  display: inline-block;
+}
+
+.page-bottom {
+  text-align: center;
+}
+
+.page-tags {
+  list-style: none;
+  padding: 0;
+  text-align: center;
+}
+
+.page-tags li {
+  display: inline-block;
+}
+
+.page-tags a {
+  color: #888;
+  text-decoration: none;
+  border: 1px solid #ccc;
+  padding: 1px 5px;
+  font-size: 90%;
+}
+
+.page-tags a:hover {
+  border-color: #aaa;
+  color: #555;
+}

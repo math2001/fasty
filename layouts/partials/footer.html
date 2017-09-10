@@ -1,3 +1,18 @@
+<script type="text/javascript">
+function loadCSS(stylesheets) {
+    let media, link
+    for (let stylesheet of stylesheets) {
+        media = stylesheet.media ? ' media="' + stylesheet.media + '"' : ''
+        link = '<link rel="stylesheet" type="text/css" href="'
+                + {{ "/" | relURL }} + "css/" + stylesheet.href + '"' + media + '>'
+        document.body.innerHTML += link
+
+    }
+}
+
+loadCSS([{ href: 'main.css' }, { href: 'phone.css', media: 'screen and (max-width: 600px)' }])
+</script>
+
 <footer>
     {{ with .Site.Copyright }}<p>{{ . }}. Powered by Hugo, with the Fasty theme.</p>{{ else }}
         <p class="error">No footer has been specified in <code>params</code>! See the documentation</p>
