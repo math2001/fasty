@@ -18,17 +18,33 @@
         --monospace: Inconsolata, menlo, consolas;
         --color: #333;
         --font-mute: hsla(214, 3%, 59%, 1);
+        --footer-height: 50px;
+    }
+
+    html {
+        height: 100%;
+        width: 100%;
+    }
+
+    * { 
+        box-sizing: border-box;
     }
 
     body {
+        display: flex;
+        flex-direction: column;
         font-family: var(--monospace);
         margin: 0;
         background: var(--page-bg);
+        height: 100%;
+        position: relative;
     }
+
     </style>
 
 </head>
 <body>
+    <div class="wrapper">
     <header>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
         {{ $currentPage := . }}
@@ -50,4 +66,5 @@
             </div>
         {{ end }}
     </header>
+    <main>
 

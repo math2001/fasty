@@ -1,3 +1,7 @@
+.wrapper {
+  flex: 1 0 auto;
+}
+
 header {
   background-color: hsl(194, 7%, 10%);
   padding: 5px 10px;
@@ -40,16 +44,6 @@ header a {
 }
 
 
-.page-content {
-  width: 750px;
-  max-width: 100%;
-  margin: auto;
-  background: white;
-  padding: 20px;
-  text-align: justify;
-  box-shadow: 5px 5px 20px #bbb;
-}
-
 .page-top {
   display: flex;
   justify-content: center;
@@ -91,8 +85,14 @@ header a {
   display: inline-block;
 }
 
-.page-bottom {
-  text-align: center;
+.page-content {
+  width: 750px;
+  max-width: 100%;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  text-align: justify;
+  box-shadow: 5px 5px 20px #bbb;
 }
 
 .page-tags {
@@ -100,7 +100,7 @@ header a {
   padding: 0;
   text-align: center;
   flex-basis: 100%;
-  margin-top: 0;
+  margin: 0;
 }
 
 .page-tags li {
@@ -120,9 +120,20 @@ header a {
   color: #555;
 }
 
+.page-bottom {
+  text-align: center;
+  padding: 1px 0;
+}
+
 .page-date {
   font-style: italic;
   color: var(--font-mute);
+}
+
+footer {
+  text-align: center;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */

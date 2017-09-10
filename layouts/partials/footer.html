@@ -1,3 +1,11 @@
+    </main>
+</div>
+<footer>
+    {{ with .Site.Copyright }}<p>{{ . }}. Powered by Hugo, with the Fasty theme.</p>{{ else }}
+        <p class="error">No copyright has been specified in <code>params</code>! See the documentation</p>
+    {{ end }}
+</footer>
+
 <script type="text/javascript">
 function loadCSS(stylesheets) {
     let media, link
@@ -12,12 +20,6 @@ function loadCSS(stylesheets) {
 
 loadCSS([{ href: 'main.css' }, { href: 'phone.css', media: 'screen and (max-width: 600px)' }])
 </script>
-
-<footer>
-    {{ with .Site.Copyright }}<p>{{ . }}. Powered by Hugo, with the Fasty theme.</p>{{ else }}
-        <p class="error">No footer has been specified in <code>params</code>! See the documentation</p>
-    {{ end }}
-</footer>
 
 </body>
 </html>
