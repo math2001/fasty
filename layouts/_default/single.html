@@ -2,9 +2,23 @@
 
 <h1 class="post page-title">{{ .Title }}</h1>
 
+<ul>
+    {{ range .Params.Categories }}
+    <li><a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+    {{ end }}
+</ul>
+
 <section class="post page-content">
     {{- .Content -}}
 </section>
+
+
+
+<ul>
+    {{ range .Params.Tags }}
+    <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+    {{ end }}
+</ul>
 
 <p class="post page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
 
