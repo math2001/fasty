@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+
+<h1>{{ .Data.Singular | title }} list</h1>
+
+<ul>
+    {{ range .Data.Terms.ByCount }}
+    <li><a href="{{ .Name | urlize }}"><code>{{ .Name }}</code> ({{ .Count }})</a></li>
+    {{ end  }}
+</ul>
+
+{{ partial "footer" . }}
