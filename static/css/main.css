@@ -2,6 +2,10 @@
   flex: 1 0 auto;
 }
 
+a {
+  color: var(--purple);
+}
+
 header {
   background-color: hsl(194, 4%, 19%);
   padding: 5px 10px;
@@ -47,7 +51,6 @@ header a {
   font-size: 100%;
   outline: none;
 }
-
 
 .page-top {
   display: flex;
@@ -166,14 +169,16 @@ footer {
   display: inline-block;
   width: 100%;
   padding: 15px 20px;
+  transition: .2s all;
 }
 
 .list-list a::before {
   content: "»";
-  margin-right: 7px;
+  font-size: 20px;
+  margin-right: 10px;
   display: inline-block;
   width: 7px;
-  margin-left: -14px;
+  margin-left: -17px;
   opacity: 0;
   transition: .2s all;
 }
@@ -181,7 +186,9 @@ footer {
 .list-list a:hover::before {
   opacity: 1;
 }
-
+.list-list a:hover {
+  color: var(--purple)
+}
 .list-separator {
   width: 50%;
   border: none;
