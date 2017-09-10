@@ -19,12 +19,13 @@
             <nav>
                 <ul>
                     {{ range . }}
-                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}menu-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ if eq (string .Pre) "|" }}
+                    <li class="menu-separator"></li>
+                    {{ end }}
+                    <li class="{{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .) }}menu-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 </ul>
             </nav>
-        {{ else }}
-            <p>No navigation?</p>
         {{ end }}
     </header>
 
