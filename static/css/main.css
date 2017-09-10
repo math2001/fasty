@@ -54,6 +54,7 @@ header a {
   display: flex;
   justify-content: center;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 
 .page-title {
@@ -98,6 +99,8 @@ header a {
   list-style: none;
   padding: 0;
   text-align: center;
+  flex-basis: 100%;
+  margin-top: 0;
 }
 
 .page-tags li {
@@ -115,6 +118,11 @@ header a {
 .page-tags a:hover {
   border-color: #aaa;
   color: #555;
+}
+
+.page-date {
+  font-style: italic;
+  color: var(--font-mute);
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
