@@ -1,5 +1,20 @@
 {{ partial "header.html" . }}
 
-This is my home page, with my header!
+<h1>{{ .Title }}</h1>
+<p>{{ .Site.Params.Description }}</p>
+
+<hr>
+
+{{ $lastpage := index .Site.Pages 0 }}
+
+{{ with index .Site.Pages 0 }}
+<p>Checkout my last {{ .Section }}: <a href="{{ .URL }}">{{ .Title }}</a></p>
+{{ end }}
+
+<hr>
+
+<p>Or just browse the website</p>
+
+{{ partial "nav" . }}
 
 {{ partial "footer.html" . }}

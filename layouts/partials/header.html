@@ -14,26 +14,16 @@
 </head>
 <body>
     <div class="wrapper">
+    {{ if not .IsHome }}
     <header>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
-        {{ $currentPage := . }}
-        {{ with .Site.Menus.main }}
-            <nav class="nav">
-                <ul class="nav-list">
-                    {{ range . }}
-                        {{ if eq (string .Pre) "|" }}
-                            <li class="nav-list-item nav-separator"></li>
-                        {{ end }}
-                        <li class="nav-list-item {{ if eq $currentPage.Section .Identifier }} nav-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
-                    {{ end }}
-                </ul>
-            </nav>
-        {{ end }}
-        {{ with not $currentPage.Site.Params.SearchDisabled }}
+        {{ partial "nav" . }}
+        {{ with not .Site.Params.SearchDisabled }}
             <div class="header-search">
                 <input type="search" placeholder="Search...">
             </div>
         {{ end }}
     </header>
+    {{ end }}
     <main>
 
