@@ -29,6 +29,12 @@ header a {
   list-style: none;
 }
 
+.nav-separator {
+  border-left: 1px solid hsl(0, 0%, 42%);
+  height: 1.2em;
+  vertical-align: middle;
+}
+
 .nav-list-item {
   display: inline-block;
 }
@@ -40,7 +46,6 @@ header a {
   color: inherit;
   font-size: 100%;
   outline: none;
-  border-bottom: 2px solid currentColor;
 }
 
 
