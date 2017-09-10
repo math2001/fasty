@@ -1,19 +1,13 @@
-I'm listing content!
+{{ partial "header.html" . }}
 
-<pre>
-Kind: {{ .Kind }}
-List: {{ .Page }}
-{{ .Data.Pages }}
-</pre>
-
-<h1>Listing {{ .Kind }}</h1>
+<h1>Listing {{ .Type }}</h1>
 
 <ul>
     {{ range .Data.Pages }}
-        {{ if not .Draft }}
-            <li><a href="{{ .Permalink }}">{{ .Title }}</a> (~ {{ printf "%#v" .ReadingTime }} min read)</li>
-        {{ end }}
+        <li><a href="{{ .Permalink }}">{{ .Title }}</a> (~ {{ .ReadingTime }} min read)</li>
     {{ end }}
 </ul>
 
-{{ printf "%#v" . }}
+<code>
+</code>
+{{ partial "footer.html" . }}

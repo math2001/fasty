@@ -1,0 +1,11 @@
+{{ partial "header" . }}
+
+<h1 class="post page-title">{{ .Title }}</h1>
+
+<section class="post page-content">
+    {{- .Content -}}
+</section>
+
+<p class="post page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
+
+{{ partial "footer" . }}
