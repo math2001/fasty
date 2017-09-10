@@ -2,11 +2,29 @@
 <head>
     {{ .Hugo.Generator }}
     <meta charset="utf-8">
+    {{ with .Description }}
+    <meta name="description" content="{{ . }}">
+    {{ end }}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ .Title }} - {{ .Site.Title }}</title>
+    {{ with .Keywords }}
+    <meta name="keywords" content="{{ . }}">
+    {{ end }}
+    <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 </head>
 <body>
     <header>
         <h2>{{ .Site.Title }}</h2>
+        {{ $currentPage := . }}
+        {{ with .Site.Menus.main }}
+            <nav>
+                <ul>
+                    {{ range . }}
+                        <li class="{{ if $currentPage.IsMenuCurrent "main" . }}menu-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        {{ else }}
+            <p>No navigation?</p>
+        {{ end }}
     </header>
 
