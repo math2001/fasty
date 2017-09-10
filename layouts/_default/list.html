@@ -1,13 +1,16 @@
 {{ partial "header.html" . }}
 
-<h1>Listing {{ .Type }}</h1>
+<div class="list-top">
+    <h1>Listing {{ .Type }}</h1>
+</div>
 
-<ul>
-    {{ range .Data.Pages }}
-        <li><a href="{{ .Permalink }}">{{ .Title }}</a> (~ {{ .ReadingTime }} min read)</li>
-    {{ end }}
-</ul>
+<div class="list-window">
+    <ul class="list-list">
+        {{ range .Data.Pages }}
+            <li><a href="{{ .Permalink }}">{{ .Title }} (~ {{ .ReadingTime }} min read)</a></li>
+            <hr class="list-separator">
+        {{ end }}
+    </ul>
+</div>
 
-<code>
-</code>
 {{ partial "footer.html" . }}

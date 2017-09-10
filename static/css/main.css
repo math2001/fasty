@@ -136,6 +136,57 @@ footer {
   margin-top: 20px;
 }
 
+/* lists pages */
+
+.list-top {
+  text-align: center;
+}
+
+.list-window {
+  width: 500px;
+  margin: auto;
+  max-width: 100%;
+}
+
+.list-list {
+  outline: none;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.list-list a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.list-list a::before {
+  content: "»";
+  margin-right: 7px;
+  display: inline-block;
+  width: 7px;
+  margin-left: -14px;
+  opacity: 0;
+  transition: .2s all;
+}
+
+.list-list a:hover::before {
+  opacity: 1;
+}
+
+.list-separator {
+  width: 50%;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.list-separator:last-of-type {
+  display: none;
+}
+
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
