@@ -13,7 +13,7 @@
 </head>
 <body>
     <header>
-        <h2>{{ .Site.Title }}</h2>
+        <h2><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
         {{ $currentPage := . }}
         {{ with .Site.Menus.main }}
             <nav>
