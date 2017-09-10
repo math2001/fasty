@@ -16,6 +16,10 @@ header a {
   margin-right: 10px;
 }
 
+.nav {
+  flex: 1;
+}
+
 .nav-list {
   padding: 0;
   list-style: none;
@@ -24,6 +28,17 @@ header a {
 .nav-list-item {
   display: inline-block;
 }
+
+.header-search input {
+  font-family: inherit;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: 100%;
+  outline: none;
+  border-bottom: 2px solid currentColor;
+}
+
 
 .page-content {
   width: 750px;
@@ -101,3 +116,10 @@ header a {
   border-color: #aaa;
   color: #555;
 }
+
+/* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none;  }
+

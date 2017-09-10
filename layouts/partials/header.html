@@ -41,12 +41,12 @@
                         <li class="nav-list-item {{ if eq $currentPage.Section .Identifier }} nav-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
                     {{ end }}
                 </ul>
-                {{ with $currentPage.Site.Params.SearchEnabled }}
-                    <div class="header-search">
-                        <input type="search">
-                    </div>
-                {{ end }}
             </nav>
+        {{ end }}
+        {{ with not $currentPage.Site.Params.SearchDisabled }}
+            <div class="header-search">
+                <input type="search" placeholder="Search...">
+            </div>
         {{ end }}
     </header>
 
