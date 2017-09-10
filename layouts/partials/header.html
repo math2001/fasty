@@ -11,6 +11,26 @@
     {{ end }}
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 
+    {{ if .Site.Params.Dev }}
+        <link rel="stylesheet" href="{{ "/css/common.css" | relURL }}">
+        {{ if .IsHome }}
+        <link rel="stylesheet" href="{{ "/css/homepage.css" | relURL }}">
+        {{ else }}
+        <link rel="stylesheet" href="{{ "/css/regular.css" | relURL }}">
+        {{ end }}
+    {{ else }}
+        <style type="text/css">
+            {{ (readFile (print "themes/" .Site.Params.themefoldername "/static/css/common.css")) | safeCSS }}
+        </style>
+        <style type="text/css">
+        {{ if .IsHome }}
+        {{ (readFile (print "themes/" .Site.Params.themefoldername "/static/css/home.css")) | safeCSS }}
+        {{ else }}
+        {{ (readFile (print "themes/" .Site.Params.themefoldername "/static/css/regular.css")) | safeCSS }}
+        {{ end }}
+        </style>
+    {{ end }}
+
 </head>
 <body>
     <div class="wrapper">

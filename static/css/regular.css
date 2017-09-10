@@ -1,0 +1,115 @@
+.page-top {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  flex-wrap: wrap;
+}
+
+.page-title {
+  margin-right: 10px;
+}
+
+.page-categories {
+  padding: 0;
+}
+
+.page-categories li {
+  display: inline-block;
+}
+
+.page-content {
+  width: 750px;
+  max-width: 100%;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  text-align: justify;
+  box-shadow: 5px 5px 20px #bbb;
+}
+
+.page-tags {
+  text-align: center;
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.page-tags li {
+  display: inline-block;
+}
+
+.page-bottom {
+  text-align: center;
+  padding: 1px 0;
+}
+
+.page-date {
+  font-style: italic;
+  color: var(--font-mute);
+}
+
+/* lists pages */
+
+.list-top, .terms-top {
+  text-align: center;
+}
+
+.list-window {
+  width: 500px;
+  margin: auto;
+  max-width: 100%;
+}
+
+.list-list {
+  outline: none;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.list-list a {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+  padding: 15px 20px;
+  transition: .2s all;
+}
+
+.list-list a::before {
+  content: "»";
+  font-size: 20px;
+  margin-right: 10px;
+  display: inline-block;
+  width: 7px;
+  margin-left: -17px;
+  opacity: 0;
+  transition: .2s all;
+}
+
+.list-list a:hover::before {
+  opacity: 1;
+}
+.list-list a:hover {
+  color: var(--purple)
+}
+.list-separator {
+  width: 50%;
+  border: none;
+  border-top: 1px solid #ccc;
+}
+
+.list-separator:last-of-type {
+  display: none;
+}
+
+.terms-content {
+  width: 500px;
+  max-width: 100%;
+  margin: auto;
+  columns: auto 10em;
+}
+
+.terms-tags,
+.terms-categories {
+  margin: 0;
+}
