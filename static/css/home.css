@@ -14,9 +14,7 @@ main {
 }
 
 .home-content {
-  position: relative;
-  top: 30%;
-  transform: translate(0, -50%);
+  margin-top: 1%;
   text-align: center;
 }
 

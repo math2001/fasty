@@ -32,11 +32,15 @@ body {
   color: #333;
   line-height: 1.5;
 }
+
 .wrapper {
   flex: 1 0 auto;
   position: relative;
 }
 
+main {
+  margin-bottom: 20px;
+}
 
 .nav {
   flex: 1;
@@ -115,7 +119,6 @@ body {
 footer {
   text-align: center;
   border-top: 1px solid #ddd;
-  margin-top: 20px;
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
