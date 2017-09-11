@@ -1,3 +1,61 @@
 body {
-  color: red;
+  /* background: var(--header-bg); */
+  /* color: var(--header-fg); */
+  /* --border-color: #666; */
+  --border-color: #ccc;
 }
+
+.wrapper {
+  display: flex;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.home-content {
+  position: relative;
+  top: 30%;
+  transform: translate(0, -50%);
+  text-align: center;
+}
+
+h1 {
+  font-size: 300%;
+  margin: 0;
+}
+
+.description {
+  text-align: center;
+}
+
+hr {
+  width: 5%;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 5% auto;
+}
+
+
+nav {
+  display: inline-block;
+}
+
+.nav-prefix, nav {
+  display: inline-block;
+}
+
+.search {
+  font-size: 100%;
+  font-family: inherit;
+  background: none;
+  border: none;
+  width: 200px;
+  outline: none;
+  color: inherit;
+  /* little hack to not get the borders blurry on chrome */
+  border: 1px solid transparent;
+  border-bottom-color: var(--border-color);
+  padding: 10px 5px;
+}
+

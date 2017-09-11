@@ -1,11 +1,11 @@
 :root {
   --page-bg: hsla(195, 55%, 98%, 1);
-  --header-bg: #555;
   --monospace: Inconsolata, menlo, consolas;
   --color: #333;
   --font-mute: hsla(214, 3%, 59%, 1);
-  --footer-height: 50px;
   --purple: hsla(232, 59%, 58%, 1);
+  --header-bg: hsl(194, 4%, 19%);
+  --header-fg: #ccc;
 }
 
 html {
@@ -34,25 +34,9 @@ body {
 }
 .wrapper {
   flex: 1 0 auto;
+  position: relative;
 }
 
-header {
-  background-color: hsl(194, 4%, 19%);
-  padding: 5px 10px;
-  display: flex;
-  align-items: baseline;
-  --header-color: #ccc;
-  color: var(--header-color);
-}
-
-header a {
-  color: var(--header-color);
-  text-decoration: none;
-}
-
-.header-brand {
-  margin-right: 10px;
-}
 
 .nav {
   flex: 1;

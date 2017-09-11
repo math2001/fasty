@@ -1,13 +1,10 @@
-{{ $currentPage := . }}
-{{ with .Site.Menus.main }}
 <nav class="nav">
     <ul class="nav-list">
         {{ range . }}
         {{ if eq (string .Pre) "|" }}
         <li class="nav-list-item nav-separator"></li>
         {{ end }}
-        <li class="nav-list-item {{ if eq $currentPage.Section .Identifier }} nav-active{{ end }}"><a href="{{ .URL }}">{{ .Name }}</a></li>
+        <li class="nav-list-item"><a href="{{ .URL }}">{{ .Name }}</a></li>
         {{ end }}
     </ul>
 </nav>
-{{ end }}

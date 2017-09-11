@@ -1,25 +1,21 @@
 {{ partial "header.html" . }}
 
-<h1>{{ .Title }}</h1>
-<p>{{ .Site.Params.Description }}</p>
+<div class="home-content">
+    <h1>{{ .Title }}</h1>
+    <p class="description">{{ .Site.Params.Description }}</p>
 
-<hr>
+    <hr>
 
-{{ $lastpage := index .Site.Pages 0 }}
+    {{ $lastpage := index .Site.Pages 0 }}
+    {{ with index .Site.Pages 0 }}
+    <p>Checkout my last {{ .Section }}: <a href="{{ .URL }}">{{ .Title }}</a></p>
+    {{ end }}
 
-{{ with index .Site.Pages 0 }}
-<p>Checkout my last {{ .Section }}: <a href="{{ .URL }}">{{ .Title }}</a></p>
-{{ end }}
+    <p class="nav-prefix">Browse:</p>
+    {{ partial "nav" .Site.Menus.home }}
 
-<hr>
-
-<p>Browse the website</p>
-
-{{ partial "nav" . }}
-
-<p>Or just look for something</p>
-
-<p><input type="search" placeholder="vim, python, golang, hugo ... you tell me!"></p>
+    <p>Or look for <input class="search" type="search" placeholder="something…"></p>
+</div>
 
 {{ partial "footer.html" . }}
 
