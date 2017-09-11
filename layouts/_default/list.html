@@ -7,8 +7,7 @@
 <div class="list-window">
     <ul class="list-list">
         {{ range .Data.Pages }}
-            <li><a href="{{ .Permalink }}">{{ .Title }} (~ {{ .ReadingTime }} min read)</a></li>
-            <hr class="list-separator">
+            <li><a href="{{ .Permalink }}">{{ .Title }} <small class="content-reading-time">(~ {{ .ReadingTime }} min)</small></a></li>
         {{ end }}
     </ul>
 </div>

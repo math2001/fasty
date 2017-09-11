@@ -75,7 +75,6 @@ header a {
   outline: none;
   padding: 0;
   list-style: none;
-  text-align: center;
 }
 
 .list-list a {
@@ -104,16 +103,11 @@ header a {
 .list-list a:hover {
   color: var(--purple)
 }
-.list-separator {
-  width: 50%;
-  border: none;
-  border-top: 1px solid #ccc;
-}
 
-.list-separator:last-of-type {
-  display: none;
+.content-reading-time {
+  font-size: 80%;
+  opacity: .8;
 }
-
 .terms-content {
   width: 500px;
   max-width: 100%;
