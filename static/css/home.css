@@ -14,7 +14,7 @@ main {
 }
 
 .home-content {
-  margin-top: 1%;
+  margin-top: 5%;
   text-align: center;
 }
 
@@ -56,4 +56,13 @@ nav {
   border-bottom-color: var(--border-color);
   padding: 10px 5px;
 }
+
+.categories, .latest {
+  display: inline-block;
+}
+
+.categories {
+  padding-left: 7px;
+}
+
 

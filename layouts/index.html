@@ -8,7 +8,12 @@
 
     {{ $lastpage := index .Site.Pages 0 }}
     {{ with index .Site.Pages 0 }}
-    <p>Checkout my last {{ .Section }}: <a href="{{ .URL }}">{{ .Title }}</a></p>
+    <p class="latest">Checkout my last {{ .Section }}:
+        <ul class="categories">{{ range .Params.Categories }}<li>
+                <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
+        </ul>
+        <a href="{{ .URL }}">{{ .Title }}</a>
+    </p>
     {{ end }}
 
     <p class="nav-prefix">Browse:</p>
