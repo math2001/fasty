@@ -24,23 +24,31 @@ h1 {
 }
 
 .description {
-  text-align: center;
+  font-size: 150%;
+  color: var(--font-mute);
 }
 
-hr {
-  width: 5%;
-  border: none;
-  border-top: 1px solid var(--border-color);
-  margin: 5% auto;
+.actions {
+  text-align: left;
+  margin: auto;
+  width: 400px;
+  max-width: 100%;
 }
-
-
 nav {
   display: inline-block;
 }
 
-.nav-prefix, nav {
+.nav-row, nav {
   display: inline-block;
+}
+
+.latest-row::before,
+.nav-row::before,
+.search-row::before {
+  content: "⇒ ";
+  font-size: 25px;
+  color: var(--font-mute);
+  line-height: 25px;
 }
 
 .search {
@@ -57,12 +65,11 @@ nav {
   padding: 10px 5px;
 }
 
-.categories, .latest {
+.categories, .latest-row {
   display: inline-block;
 }
 
 .categories {
   padding-left: 7px;
 }
-
 

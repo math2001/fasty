@@ -4,25 +4,26 @@
     <h1>{{ .Title }}</h1>
     <p class="description">{{ .Site.Params.Description }}</p>
 
-    <hr>
+    <div class="actions">
+        {{ $lastpage := index .Site.Pages 0 }}
+        {{ with index .Site.Pages 0 }}
+        <p class="latest-row">Checkout my last {{ .Section }}:
+            <ul class="categories">{{ range .Params.Categories }}<li>
+                    <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
+            </ul>
+            <a href="{{ .URL }}">{{ .Title }}</a>
+        </p>
+        {{ end }}
 
-    {{ $lastpage := index .Site.Pages 0 }}
-    {{ with index .Site.Pages 0 }}
-    <p class="latest">Checkout my last {{ .Section }}:
-        <ul class="categories">{{ range .Params.Categories }}<li>
-                <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
-        </ul>
-        <a href="{{ .URL }}">{{ .Title }}</a>
-    </p>
-    {{ end }}
-
-    <p class="nav-prefix">Browse:</p>
-    {{ partial "nav" .Site.Menus.home }}
+        <p class="nav-row">Browse:</p>
+        {{ partial "nav" .Site.Menus.home }}
 
 
-    {{ if not .Site.Params.disablesearch }}
-    <p>Or look for <input class="search" type="search" placeholder="something…"></p>
-    {{ end }}
+        {{ if not .Site.Params.disablesearch }}
+        <p class="search-row">Or look for <input class="search" type="search" placeholder="something…"></p>
+        {{ end }}
+    </div>
+
 </div>
 
 {{ partial "footer.html" . }}
