@@ -9,6 +9,7 @@
     {{ with .Keywords }}
     <meta name="keywords" content="{{ . }}">
     {{ end }}
+    <link rel=icon type=image/png href={{ .Site.Params.icon }}>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 
     {{ if .Site.Params.Dev }}
