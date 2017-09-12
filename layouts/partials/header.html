@@ -38,7 +38,7 @@
     <header>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
         {{ partial "nav" .Site.Menus.main }}
-        {{ with not .Site.Params.SearchDisabled }}
+        {{ if not .Site.Params.disablesearch }}
             <div class="header-search">
                 <input type="search" placeholder="Search...">
             </div>

@@ -19,7 +19,10 @@
     <p class="nav-prefix">Browse:</p>
     {{ partial "nav" .Site.Menus.home }}
 
+
+    {{ if not .Site.Params.disablesearch }}
     <p>Or look for <input class="search" type="search" placeholder="something…"></p>
+    {{ end }}
 </div>
 
 {{ partial "footer.html" . }}
