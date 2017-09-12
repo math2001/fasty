@@ -2,15 +2,15 @@
 <head>
     {{ .Hugo.Generator }}
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ with .Description }}
     <meta name="description" content="{{ . }}">
     {{ end }}
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ with .Keywords }}
     <meta name="keywords" content="{{ . }}">
     {{ end }}
-    <link rel=icon type=image/png href="{{ with .Site.Params.favicon }}{{ . }}
-    {{- else -}}{{ .Site.Params.avatar.path }}{{ end }}">
+    <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}
+    {{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 
     {{ if .Site.Params.Dev }}
@@ -22,19 +22,20 @@
         {{ end }}
     {{ else }}
         <style type="text/css">
-            {{ (readFile (print "themes/" .Site.Params.themefoldername "/static/css/common.css")) | safeCSS }}
+            {{ readFile (relURL "/css/common.css") | safeCSS }}
         </style>
         <style type="text/css">
         {{ if .IsHome }}
-        {{ (readFile (print "themes/" .Site.Params.themefoldername "/static/css/home.css")) | safeCSS }}
+        {{ readFile (relURL "/css/home.css") | safeCSS }}
         {{ else }}
-        {{ (readFile (print "themes/" .Site.Params.themefoldername "/static/css/regular.css")) | safeCSS }}
+        {{ readFile (relURL "/css/regular.css") | safeCSS }}
         {{ end }}
         </style>
     {{ end }}
 
 </head>
 <body>
+
     <div class="wrapper">
     {{ if not .IsHome }}
     <header>
