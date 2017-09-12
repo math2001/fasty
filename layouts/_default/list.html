@@ -1,7 +1,7 @@
 {{ partial "header.html" . }}
 
 <div class="list-top">
-    <h1>{{ .Type | pluralize | title }}</h1>
+    <h1>{{ if eq .Type "page" }}<code>{{ .Data.Term }}</code>{{ else }}{{ .Type | pluralize | title }}{{ end }}</h1>
 </div>
 
 <div class="list-window">
