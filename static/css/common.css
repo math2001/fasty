@@ -6,6 +6,7 @@
   --purple: hsla(232, 59%, 58%, 1);
   --header-bg: hsl(194, 4%, 19%);
   --header-fg: #ccc;
+  --code-bg: #F3F3F3;
 }
 
 html {
