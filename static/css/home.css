@@ -28,6 +28,14 @@ h1 {
   color: var(--font-mute);
 }
 
+.avatar-row {
+  text-align: center;
+}
+
+.avatar {
+  width: 150px;
+}
+
 .actions {
   text-align: left;
   margin: auto;

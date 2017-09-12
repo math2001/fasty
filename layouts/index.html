@@ -1,7 +1,14 @@
 {{ partial "header.html" . }}
 
 <div class="home-content">
+    {{ with .Site.Params.Avatar }}
+    <p class="avatar-row">
+        <img class=avatar src="{{ .path }}" alt="{{ .alt }}">
+    </p>
+    {{ end }}
+
     <h1>{{ .Title }}</h1>
+
     <p class="description">{{ .Site.Params.Description }}</p>
 
     <div class="actions">
