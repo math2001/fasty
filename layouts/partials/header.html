@@ -13,24 +13,18 @@
     {{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 
+    {{ $csstoload := "regular" }}
+    {{ if .IsHome }}{{ $csstoload := "home" }}{{ end }}
+    {{ $colorscheme := "monokai-sublime" }}
+    {{ $colorscheme := "tomorrow-night" }}
     {{ if .Site.Params.Dev }}
-        <link rel="stylesheet" href="{{ "/css/common.css" | relURL }}">
-        {{ if .IsHome }}
-        <link rel="stylesheet" href="{{ "/css/home.css" | relURL }}">
-        {{ else }}
-        <link rel="stylesheet" href="{{ "/css/regular.css" | relURL }}">
-        {{ end }}
+    <link rel="stylesheet" href="{{ (print "/css/colorschemes/" $colorscheme ".css") | relURL }}">
+    <link rel="stylesheet" href="{{ "/css/common.css" | relURL }}">
+    <link rel="stylesheet" href="{{ (print "/css/" $csstoload ".css") | relURL }}">
     {{ else }}
-        <style type="text/css">
-            {{ readFile (relURL "/css/common.css") | safeCSS }}
-        </style>
-        <style type="text/css">
-        {{ if .IsHome }}
-        {{ readFile (relURL "/css/home.css") | safeCSS }}
-        {{ else }}
-        {{ readFile (relURL "/css/regular.css") | safeCSS }}
-        {{ end }}
-        </style>
+    <style type="text/css">{{ readFile (relURL "/css/common.css") | safeCSS }}</style>
+    <style type="text/css">{{ readFile (relURL (print  "/css/" $csstoload ".css" )) | safeCSS }}</style>
+    <style type="text/css">{{ readFile (relURL (print  "/css/colorschemes/" $colorscheme ".css" )) | safeCSS }}</style>
     {{ end }}
 
 </head>

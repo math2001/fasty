@@ -118,8 +118,7 @@ header a {
 
 /* content */
 
-pre {
-  background-color: var(--code-bg);
+.hljs {
   padding: 20px calc(var(--x-margin) + 20px);
 }
 

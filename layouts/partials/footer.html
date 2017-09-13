@@ -10,16 +10,38 @@
 function loadCSS(stylesheets) {
     let media, link
     for (let stylesheet of stylesheets) {
+        console.log('load', stylesheet.href)
         media = stylesheet.media ? ' media="' + stylesheet.media + '"' : ''
         link = '<link rel="stylesheet" type="text/css" href="'
                 + {{ "/" | relURL }} + "css/" + stylesheet.href + '"' + media + '>'
-        document.body.innerHTML += link
+        document.head.innerHTML += link
 
     }
 }
-
+function loadJs(scripts) {
+    for (let key in scripts) {
+        tag = document.createElement('script')
+        tag.onload = {{ "/" | relURL }} + 'js/' + scripts[key]
+        tag.src = key
+        document.body.appendChild(tag)
+    }
+}
 loadCSS([{ href: 'phone.css', media: 'screen and (max-width: 600px)' }])
+
 </script>
+
+{{ if eq .Kind "page" }}
+{{ if .Site.Params.Dev }}
+<script type="text/javascript" src="{{ "/" | relURL }}js/highlight.pack.js"></script>
+<script type="text/javascript">hljs.initHighlightingOnLoad()</script>
+{{ else }}
+<script type="text/javascript">
+loadJs({
+    'highlight.pack.js': highlightJSCallback()
+})
+</script>
+{{ end }}
+{{ end }}
 
 </body>
 </html>
