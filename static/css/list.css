@@ -14,12 +14,18 @@
   list-style: none;
 }
 
-.list-list .categories {
-  display: inline-block;
-  font-size: 90%;
+.list-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.list-content {
+.list-list .categories {
+  display: inline-block;
+  font-size: 80%;
+}
+
+.list-link {
   color: inherit;
   text-decoration: none;
   display: inline-block;
@@ -27,11 +33,11 @@
   transition: .2s all;
 }
 
-.list-content:hover {
+.list-link:hover {
   color: var(--purple)
 }
 
-.content-reading-time {
+.list-content-reading-time {
   font-size: 80%;
   opacity: .8;
 }
