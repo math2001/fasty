@@ -15,14 +15,14 @@
 
     {{- .Scratch.Set "css" "common" -}}{{- partial "loadcss" . -}}
     {{- if .IsHome -}}{{- .Scratch.Set "css" "home" -}}{{- partial "loadcss" . -}}
-    {{- else if eq .Kind "section" -}}{{- .Scratch.Set "css" "list" -}}{{- partial "loadcss" . -}}
+    {{- else if or ( eq .Kind "taxonomy" ) ( eq .Kind "section" ) -}}
+        {{- .Scratch.Set "css" "list" -}}{{- partial "loadcss" . -}}
     {{- else if eq .Kind "taxonomyTerm" -}}{{- .Scratch.Set "css" "terms" -}}{{- partial "loadcss" . -}}
     {{- else -}}{{- .Scratch.Set "css" "page" -}}{{- partial "loadcss" . -}}
     {{- end -}}
     {{- .Scratch.Set "css" "colorschemes/tomorrow-night" -}}{{- partial "loadcss" . -}}
 </head>
 <body>
-
     <div class="wrapper">
     {{ if not .IsHome }}
     <header>
