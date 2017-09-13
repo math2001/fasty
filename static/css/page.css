@@ -48,18 +48,6 @@
   color: var(--font-mute);
 }
 
-.terms-content {
-  width: 500px;
-  max-width: 100%;
-  margin: auto;
-  columns: auto 10em;
-}
-
-.terms-tags,
-.terms-categories {
-  margin: 0;
-}
-
 /* content */
 
 .hljs {
