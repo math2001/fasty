@@ -1,4 +1,4 @@
-{{ partial "header.html" . }}
+{{- partial "header.html" . -}}
 
 <div class="list-top">
     <h1>{{ if eq .Type "page" }}<code>{{ .Data.Term }}</code>{{ else }}{{ .Type | pluralize | title }}{{ end }}</h1>
@@ -23,4 +23,4 @@
     </ul>
 </div>
 
-{{ partial "footer.html" . }}
+{{- partial "footer.html" . -}}

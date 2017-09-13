@@ -2,17 +2,17 @@
 
 <div class="page-top">
     <h1 class="page-title">{{ .Title }}</h1>
-    {{ with .Params.Categories }}
+    {{- with .Params.Categories }}
     <ul class="page-categories categories">
-        {{ range . }}
+        {{- range . }}
         <li><a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-        {{ end }}
+        {{- end }}
     </ul>
     {{ end }}
     <ul class="page-tags tags">
-        {{ range .Params.Tags }}
+        {{- range .Params.Tags }}
         <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-        {{ end }}
+        {{- end }}
     </ul>
 </div>
 

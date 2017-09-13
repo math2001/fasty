@@ -3,18 +3,13 @@
     {{ .Hugo.Generator }}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {{ with .Description }}
-    <meta name="description" content="{{ . }}">
-    {{ end }}
-    {{ with .Keywords }}
-    <meta name="keywords" content="{{ . }}">
-    {{ end }}
+    {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
+    {{ with .Keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
     <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}
     {{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
-
     {{- .Scratch.Set "css" "common" -}}{{- partial "loadcss" . -}}
-    {{ if eq .Kind "page" }}
+    {{- if eq .Kind "page" -}}
     {{- .Scratch.Set "css" "colorschemes/tomorrow-night" -}}{{- partial "loadcss" . -}}
     {{- .Scratch.Set "css" "page" -}}{{- partial "loadcss" . -}}
     {{- else if .IsHome -}}{{- .Scratch.Set "css" "home" -}}{{- partial "loadcss" . -}}
@@ -25,16 +20,15 @@
 </head>
 <body>
     <div class="wrapper">
-    {{ if not .IsHome }}
+    {{- if not .IsHome -}}
     <header>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
-        {{ partial "nav" .Site.Menus.main }}
-        {{ if not .Site.Params.disablesearch }}
+        {{- partial "nav" .Site.Menus.main -}}
+        {{- if not .Site.Params.disablesearch -}}
             <div class="header-search">
                 <input type="search" placeholder="Search...">
             </div>
-        {{ end }}
+        {{- end -}}
     </header>
-    {{ end }}
+    {{- end }}
     <main>
-

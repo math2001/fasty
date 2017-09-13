@@ -1,19 +1,17 @@
-{{ partial "header.html" . }}
+{{- partial "header.html" . -}}
 
 <div class="home-content">
-    {{ with .Site.Params.Avatar }}
+    {{- with .Site.Params.Avatar -}}
     <p class="avatar-row">
         <img class=avatar src="{{ .path }}" alt="{{ .alt }}">
-    </p>
-    {{ end }}
-
+    </p>{{ end }}
     <h1>{{ .Title }}</h1>
 
     <p class="description">{{ .Site.Params.Description }}</p>
 
     <div class="actions">
-        {{ $lastpage := index .Site.Pages 0 }}
-        {{ with index .Site.Pages 0 }}
+        {{- $lastpage := index .Site.Pages 0 -}}
+        {{- with index .Site.Pages 0 -}}
         <p class="latest-row">Checkout my last {{ .Section }}:
             <ul class="categories">{{ range .Params.Categories }}<li>
                     <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
@@ -23,15 +21,15 @@
         {{ end }}
 
         <p class="nav-row">Browse:</p>
-        {{ partial "nav" .Site.Menus.home }}
+        {{- partial "nav" .Site.Menus.home -}}
 
 
-        {{ if not .Site.Params.disablesearch }}
+        {{- if not .Site.Params.disablesearch -}}
         <p class="search-row">Or look for <input class="search" type="search" placeholder="something…"></p>
         {{ end }}
     </div>
 
 </div>
 
-{{ partial "footer.html" . }}
+{{- partial "footer.html" . -}}
 
