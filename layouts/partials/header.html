@@ -18,9 +18,10 @@
     {{- else if or ( eq .Kind "taxonomy" ) ( eq .Kind "section" ) -}}
         {{- .Scratch.Set "css" "list" -}}{{- partial "loadcss" . -}}
     {{- else if eq .Kind "taxonomyTerm" -}}{{- .Scratch.Set "css" "terms" -}}{{- partial "loadcss" . -}}
-    {{- else -}}{{- .Scratch.Set "css" "page" -}}{{- partial "loadcss" . -}}
-    {{- end -}}
+    {{- else -}}
+    {{- .Scratch.Set "css" "page" -}}{{- partial "loadcss" . -}}
     {{- .Scratch.Set "css" "colorschemes/tomorrow-night" -}}{{- partial "loadcss" . -}}
+    {{- end -}}
 </head>
 <body>
     <div class="wrapper">
