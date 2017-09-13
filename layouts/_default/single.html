@@ -1,5 +1,4 @@
-{{ partial "header" . }}
-
+{{- partial "header" . -}}
 
 <div class="page-top">
     <h1 class="page-title">{{ .Title }}</h1>
@@ -25,4 +24,4 @@
     <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
 </div>
 
-{{ partial "footer" . }}
+{{- partial "footer" . -}}

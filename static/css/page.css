@@ -24,7 +24,8 @@
   --x-margin: 30px;
 }
 
-.page-content p {
+.page-content p,
+.page-content h2 {
   margin-right: var(--x-margin);
   margin-left: var(--x-margin);
 }
