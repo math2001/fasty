@@ -1,0 +1,5 @@
+{{- if $.Site.Params.Dev -}}
+<link rel="stylesheet" href="{{- (print "/css/" ( .Scratch.Get "css" ) ".css") | relURL -}}">
+{{- else -}}
+<style type="text/css">{{ readFile ( relURL (print "/css/" ( .Scratch.Get "css" ) ".css" ) ) }}</style>
+{{- end -}}

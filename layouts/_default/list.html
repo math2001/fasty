@@ -7,14 +7,14 @@
 <div class="list-window">
     <ul class="list-list">
         {{ range .Data.Pages }}
-        <li>
+        <li class="list-contentcontent">
+            <a class=list-link href="{{ .Permalink }}">{{ .Title }}</a>
+            <small class="content-reading-time" title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
             <ul class="categories">{{ range .Params.Categories }}
                 <li>
                     <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a>
                 </li>{{ end }}
             </ul>
-            <a class=list-content href="{{ .Permalink }}">{{ .Title }}</a>
-            <small class="content-reading-time" title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
         </li>
         {{ end }}
     </ul>

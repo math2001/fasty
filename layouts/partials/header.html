@@ -13,20 +13,12 @@
     {{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
 
-    {{ .Scratch.Add "csstoload" "regular" }}
-    {{ if .IsHome }}{{ .Scratch.Set "csstoload" "home" }}{{ end }}
-    {{ $colorscheme := "monokai-sublime" }}
-    {{ $colorscheme := "tomorrow-night" }}
-    {{ if .Site.Params.Dev }}
-    <link rel="stylesheet" href="{{ (print "/css/colorschemes/" $colorscheme ".css") | relURL }}">
-    <link rel="stylesheet" href="{{ "/css/common.css" | relURL }}">
-    <link rel="stylesheet" href="{{ (print "/css/" (.Scratch.Get "csstoload") ".css") | relURL }}">
-    {{ else }}
-    <style type="text/css">{{ readFile (relURL "/css/common.css") | safeCSS }}</style>
-    <style type="text/css">{{ readFile (relURL (print  "/css/" (.Scratch.Get "csstoload") ".css" )) | safeCSS }}</style>
-    <style type="text/css">{{ readFile (relURL (print  "/css/colorschemes/" $colorscheme ".css" )) | safeCSS }}</style>
-    {{ end }}
-
+    {{- .Scratch.Set "css" "common" -}}{{- partial "loadcss" . -}}
+    {{- if .IsHome -}}{{- .Scratch.Set "css" "home" -}}{{- partial "loadcss" . -}}
+    {{- else if eq .Kind "section" -}}{{- .Scratch.Set "css" "list" -}}{{- partial "loadcss" . -}}
+    {{- else -}}{{- .Scratch.Set "css" "regular" -}}{{- partial "loadcss" . -}}
+    {{- end -}}
+    {{- .Scratch.Set "css" "colorschemes/tomorrow-night" -}}{{- partial "loadcss" . -}}
 </head>
 <body>
 
