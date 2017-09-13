@@ -6,7 +6,7 @@
 
 <div class="list-window">
     <ul class="list-list">
-        {{ range .Data.Pages }}
+        {{ range .Data.Pages.ByDate.Reverse }}
         <li class="list-content">
             <span>
             <a class=list-link href="{{ .Permalink }}">{{ .Title }}</a>
