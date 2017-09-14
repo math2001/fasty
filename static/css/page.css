@@ -7,6 +7,12 @@
 
 .page-title {
   margin-right: 10px;
+  margin-left: 10px;
+  text-align: center;
+}
+
+.page-categories {
+  margin-top: 0;
 }
 
 .page-categories li {
@@ -33,6 +39,7 @@
   margin-right: var(--x-margin);
   margin-left: var(--x-margin);
 }
+
 .page-tags {
   text-align: center;
   flex-basis: 100%;
@@ -45,7 +52,7 @@
 
 .page-bottom {
   text-align: center;
-  padding: 1px 0;
+  padding: 1px 20px;
 }
 
 .page-date {

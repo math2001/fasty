@@ -22,6 +22,17 @@
 
 <div class="page-bottom">
     <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
+    {{- if or (.PrevInSection) (.NextInSection) -}}
+    <h4>Read an other {{ .Section }}</h4>
+    <div class="page-read-other">
+        {{ if .PrevInSection }}
+        <p>← <a href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Title }}</a></p>
+        {{ end -}}
+        {{- if .NextInSection }}
+        <p><a href="{{ .NextInSection.RelPermalink }}">{{ .NextInSection.Title }}</a> →</p>
+        {{- end -}}
+    </div>
+    {{- end }}
 </div>
 
 {{- partial "footer" . -}}
