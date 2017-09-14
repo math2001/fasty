@@ -49,6 +49,8 @@ header {
   display: flex;
   align-items: baseline;
   color: var(--header-fg);
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 header a {
@@ -61,7 +63,7 @@ header a {
 }
 
 .nav {
-  flex: 1;
+  flex-grow: 1;
 }
 
 .nav-list {

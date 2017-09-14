@@ -20,7 +20,7 @@
         {{ end -}}
 
         <p class="nav-row">Browse:</p>
-        {{- partial "nav" .Site.Menus.home -}}
+        {{- partial "nav" ( dict "menus" .Site.Menus.home ) -}}
 
         {{- if not .Site.Params.disablesearch -}}
         <p class="search-row">Or look for <input class="search" type="search" placeholder="something…"></p>
