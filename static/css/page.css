@@ -25,7 +25,11 @@
 }
 
 .page-content p,
-.page-content h2 {
+.page-content h2,
+.page-content h3,
+.page-content h4,
+.page-content h5,
+.page-content h6 {
   margin-right: var(--x-margin);
   margin-left: var(--x-margin);
 }
