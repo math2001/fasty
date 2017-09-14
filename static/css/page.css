@@ -27,7 +27,7 @@
   text-align: justify;
   box-shadow: 5px 5px 20px #ddd;
   padding: 10px 0;
-  --x-margin: 30px;
+  --x-margin: 5%;
 }
 
 .page-content p,
@@ -63,12 +63,11 @@
 /* content */
 
 .hljs {
-  padding: 20px calc(var(--x-margin) + 20px);
+  padding: 20px calc(var(--x-margin) + 3%);
 }
 
 :not(pre) > code {
   background-color: var(--code-bg);
   padding: 2px 5px;
   border-radius: 2px;
-  white-space: nowrap;
 }
