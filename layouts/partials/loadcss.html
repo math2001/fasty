@@ -1,5 +1,7 @@
-{{- if $.Site.Params.Dev -}}
-<link rel="stylesheet" href="{{- (print "/css/" ( .Scratch.Get "css" ) ".css") | relURL -}}">
+{{- if .Params.Dev -}}
+<link rel="stylesheet" href="{{- (print "/css/" .css ".css") | relURL -}}">
 {{- else -}}
-<style type="text/css">{{ readFile ( relURL (print "/css/" ( .Scratch.Get "css" ) ".css" ) ) }}</style>
+<style>
+    {{ readFile ( relURL (print .Params.themefolderpath "/static/css/" .css ".css" ) ) | safeCSS }}
+</style>
 {{- end -}}

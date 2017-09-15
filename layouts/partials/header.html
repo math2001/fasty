@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ with .Description }}<meta name="description" content="{{ . }}">{{ end }}
     {{ with .Keywords }}<meta name="keywords" content="{{ . }}">{{ end }}
-    <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}
-    {{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
+
+    <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}{{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
-    {{- .Scratch.Set "css" "common" -}}{{- partial "loadcss" . -}}
+    {{- partial "loadcss" (dict "Params" .Site.Params "css" "common") -}}
     {{- if eq .Kind "page" -}}
-    {{- .Scratch.Set "css" "colorschemes/tomorrow-night" -}}{{- partial "loadcss" . -}}
-    {{- .Scratch.Set "css" "page" -}}{{- partial "loadcss" . -}}
-    {{- else if .IsHome -}}{{- .Scratch.Set "css" "home" -}}{{- partial "loadcss" . -}}
+        {{- partial "loadcss" (dict "Params" .Site.Params "css" "colorschemes/tomorrow-night")}}
+    {{- else if .IsHome -}}
+        {{- partial "loadcss" (dict "Params" .Site.Params "css" "home") -}}
     {{- else if or ( eq .Kind "taxonomy" ) ( eq .Kind "section" ) -}}
-        {{- .Scratch.Set "css" "list" -}}{{- partial "loadcss" . -}}
-    {{- else if eq .Kind "taxonomyTerm" -}}{{- .Scratch.Set "css" "terms" -}}{{- partial "loadcss" . -}}
-    {{- end -}}
+        {{- partial "loadcss" (dict "Params" .Site.Params "css" "list") -}}
+    {{- else if eq .Kind "taxonomyTerm" -}}
+        {{- partial "loadcss" (dict "Params" .Site.Params "css" "terms") -}}
+    {{ end }}
 </head>
 <body>
     <div class="wrapper">
