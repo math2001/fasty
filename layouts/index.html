@@ -12,18 +12,28 @@
     <div class="actions">
         {{- $lastpage := index .Site.Pages 0 -}}
         {{- with index .Site.Pages 0 -}}
-        <p class="latest-row">Checkout my last {{ .Section }}:</p>
-        <ul class="categories">{{ range .Params.Categories }}<li>
-                <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a></li>{{ end }}
-        </ul>
-        <a href="{{ .URL }}">{{ .Title }}</a>
+        <div class="latest-row">
+            Checkout my last {{ .Section }}:
+            {{- if .Params.Categories }}
+            <ul class="categories">
+                {{- range .Params.Categories }}
+                <li>
+                    <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a>
+                </li>
+                {{ end }}
+            </ul>
+            {{ end -}}
+            <a href="{{ .URL }}">{{ .Title }}</a>
+        </div>
         {{ end -}}
 
-        <p class="nav-row">Browse:</p>
-        {{- partial "nav" ( dict "menus" .Site.Menus.home ) -}}
+        <div class="nav-row">
+            Browse:
+            {{- partial "nav" ( dict "menus" .Site.Menus.home ) -}}
+        </div>
 
         {{- if not .Site.Params.disablesearch -}}
-        <p class="search-row">Or look for <input class="search" type="search" placeholder="something…"></p>
+        <div class="search-row">Or look for <input class="search" type="search" placeholder="something…"></div>
         {{ end }}
     </div>
 
