@@ -9,11 +9,18 @@
     <ul class="list-list">
         {{ range .Data.Pages.ByDate.Reverse }}
         <li class="list-content">
-            <span>
-            <a class=list-link href="{{ .Permalink }}">{{ .Title }}</a>
-            <small class="list-content-reading-time"
-                title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
-            </span>
+            <div>
+                {{- with .Params.Tags }}
+                <ul class="list-content-tags tags">
+                    {{- range first 2 .  }}
+                    <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+                    {{- end }}
+                </ul>
+                {{- end }}
+                <a class=list-link href="{{ .Permalink }}">{{ .Title }}</a>
+                <small class="list-content-reading-time"
+                    title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
+            </div>
             <ul class="categories">{{ range .Params.Categories }}
                 <li>
                     <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a>

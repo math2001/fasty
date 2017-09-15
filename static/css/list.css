@@ -25,6 +25,11 @@
   flex-wrap: wrap;
 }
 
+.list-content-tags,
+.list-content-tags li {
+  display: inline-block;
+}
+
 .list-list .categories {
   display: inline-block;
   font-size: 80%;
