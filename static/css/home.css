@@ -32,11 +32,12 @@ h1 {
   width: 150px;
 }
 
-.actions {
+.home-actions {
   text-align: left;
   margin: auto;
   width: 400px;
   max-width: 100%;
+  padding: 0 10px;
 }
 nav {
   display: inline-block;

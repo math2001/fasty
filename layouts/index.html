@@ -9,7 +9,7 @@
 
     <p class="description">{{ .Site.Params.Description }}</p>
 
-    <div class="actions">
+    <div class="home-actions">
         {{- with index ( where .Site.Pages "Params.isindex" "!=" true ) 0 -}}
         <div class="latest-row">
             Checkout my last {{ .Section }}:

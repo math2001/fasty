@@ -41,7 +41,6 @@ body {
 
 main {
   margin-bottom: 20px;
-  padding: 10px;
 }
 
 header {
@@ -141,6 +140,7 @@ header a {
 footer {
   text-align: center;
   border-top: 1px solid #ddd;
+  padding: 0 10px;
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
