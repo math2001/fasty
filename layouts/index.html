@@ -10,11 +10,10 @@
     <p class="description">{{ .Site.Params.Description }}</p>
 
     <div class="actions">
-        {{- $lastpage := index .Site.Pages 0 -}}
-        {{- with index .Site.Pages 0 -}}
+        {{- with index ( where .Site.Pages "Params.isindex" "!=" true ) 0 -}}
         <div class="latest-row">
             Checkout my last {{ .Section }}:
-            {{- if .Params.Categories }}
+            {{ if .Params.Categories -}}
             <ul class="categories">
                 {{- range .Params.Categories }}
                 <li>
