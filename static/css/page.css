@@ -72,3 +72,9 @@
   padding: 2px 5px;
   border-radius: 2px;
 }
+
+blockquote {
+  border-left: 4px solid #ddd;
+  color: #aaa;
+  font-family: sans-serif;
+}

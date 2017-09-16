@@ -20,6 +20,7 @@
 }
 
 .list-content {
+  padding: 10px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -40,8 +41,8 @@
   color: inherit;
   text-decoration: none;
   display: inline-block;
-  padding: 15px 0px;
   transition: .2s all;
+  display: inline;
 }
 
 .list-link:hover {
