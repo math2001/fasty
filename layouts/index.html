@@ -27,8 +27,7 @@
         {{ end -}}
 
         <div class="nav-row">
-            Browse:
-            {{- partial "nav" ( dict "menus" .Site.Menus.home ) -}}
+            Browse: {{ partial "nav" ( dict "menus" .Site.Menus.home ) -}}
         </div>
 
         {{- if not .Site.Params.disablesearch -}}
