@@ -30,6 +30,10 @@
   --x-margin: 5%;
 }
 
+.page-content img {
+  max-width: 100%;
+}
+
 .page-content p,
 .page-content blockquote,
 .page-content ul,
