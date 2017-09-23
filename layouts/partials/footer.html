@@ -10,7 +10,6 @@
 function loadCSS(stylesheets) {
     let media, link
     for (let stylesheet of stylesheets) {
-        console.log('load', stylesheet.href)
         media = stylesheet.media ? ' media="' + stylesheet.media + '"' : ''
         link = '<link rel="stylesheet" type="text/css" href="'
                 + {{ "/" | relURL }} + "css/" + stylesheet.href + '"' + media + '>'
@@ -18,6 +17,7 @@ function loadCSS(stylesheets) {
 
     }
 }
+
 function loadJs(scripts) {
     for (let key in scripts) {
         tag = document.createElement('script')
@@ -32,6 +32,18 @@ loadCSS([{ href: 'phone.css', media: 'screen and (max-width: 600px)' }])
 
 {{- if eq .Kind "page" -}}
 <script src="{{ "/" | relURL }}js/highlight.pack.js" async onload="hljs.initHighlightingOnLoad()"></script>
+{{- end -}}
+
+{{- if .Params.repository -}}
+{{- if eq .Section "project" -}}
+<script>
+    fetch('https://api.github.com/repos/{{ .Site.Params.github_username }}/{{ .Params.repository }}')
+    .then(response => response.json())
+    .then(repository => {
+        document.querySelector('#repository-stargazers-count').textContent = repository.stargazers_count
+    })
+</script>
+{{- end -}}
 {{- end -}}
 
 </body>

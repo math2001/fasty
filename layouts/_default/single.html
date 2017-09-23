@@ -17,8 +17,11 @@
 
     {{ if .Params.repository }}
     {{ if eq .Section "project" }}
-    <p>Repository: <code><a href="https://github.com/{{ .Site.Params.github_username }}">
-            {{ .Site.Params.github_username }}/{{ .Params.repository }}</a></code></p>
+    <p>
+        Repository: <code><a href="https://github.com/{{ .Site.Params.github_username }}">
+                {{ .Site.Params.github_username }}/{{ .Params.repository }}</a></code>
+        <span id="repository-stargazers-count"></span> <span class="repository-star">&#x2605;</span>
+    </p>
     {{ end }}
     {{ end }}
 
