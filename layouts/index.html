@@ -12,7 +12,7 @@
     <div class="home-actions">
         {{- with index ( where .Site.Pages "Params.isindex" "!=" true ) 0 -}}
         <div class="latest-row">
-            Checkout my last {{ .Section }}:
+            Checkout my last {{ .Section }}:<br>
             {{ if .Params.Categories -}}
             <ul class="categories">
                 {{- range .Params.Categories }}

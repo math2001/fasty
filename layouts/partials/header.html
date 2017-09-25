@@ -22,16 +22,16 @@
 
     <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}{{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
-    {{- partial "loadcss" (dict "Params" .Site.Params "css" "common") -}}
+    {{- partial "loadcss" (dict "Dot" . "css" "common") -}}
     {{- if eq .Kind "page" -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "colorschemes/tomorrow-night")}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "page")}}
+        {{- partial "loadcss" (dict "Dot" . "css" "colorschemes/tomorrow-night")}}
+        {{- partial "loadcss" (dict "Dot" . "css" "page")}}
     {{- else if .IsHome -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "home") -}}
+        {{- partial "loadcss" (dict "Dot" . "css" "home") -}}
     {{- else if or ( eq .Kind "taxonomy" ) ( eq .Kind "section" ) -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "list") -}}
+        {{- partial "loadcss" (dict "Dot" . "css" "list") -}}
     {{- else if eq .Kind "taxonomyTerm" -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "terms") -}}
+        {{- partial "loadcss" (dict "Dot" . "css" "terms") -}}
     {{ end }}
 </head>
 <body>
