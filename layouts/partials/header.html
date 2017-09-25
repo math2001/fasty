@@ -11,6 +11,14 @@
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end -}}
 
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}">
+    <meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}">
+
+    <meta name="og:title" content="{{ .Title }}">
+    <meta name="og:image" content="{{ .Site.Params.avatar.path | absURL }}">
+    <meta name="og:url" content="{{ .Permalink }}">
+    <meta name="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
 
     <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}{{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
