@@ -46,8 +46,8 @@
                 {{ if not (eq (printf "%v" $value.Pre ) "") }}
                     {{ if not (eq $index 0 ) }}</ul></div>{{ end }}
                     <div class="header-split">
-                        <h3>{{ $value.Pre }}</h3>
-                        <ul>
+                        <h3 class="header-split-title">{{ $value.Pre }}</h3>
+                        <ul class="header-split-list">
                 {{ end }}
                 <li><a href="{{ $value.URL | relURL }}">{{ $value.Name }}</a></li>
             {{ end }}

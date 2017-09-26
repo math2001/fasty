@@ -29,20 +29,44 @@ body.header-active header {
 }
 
 .header-brand {
-  font-size: 9vw;
-}
-
-.header-nav .nav-list {
-  padding: 0;
-  list-style: none;
-}
-
-.header-nav .nav-list-item {
-  margin: 3%;
-  font-size: 7vw;
+  font-size: 200%;
 }
 
 header a {
   color: var(--header-fg);
   text-decoration: none;
+}
+
+.header-splits {
+  text-align: center;
+}
+
+.header-split {
+  text-align: left;
+  margin: 0 30px;
+  display: inline-block;
+}
+
+.header-split-title {
+  font-weight: normal;
+  color: #666;
+  font-size: .6em;
+}
+
+.header-split-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-split-list a::before {
+  content: "⇒";
+  display: inline;
+  margin-right: 10px;
+  color: #aaa;
+}
+
+.header-split-list a:hover::before,
+.header-split-list a:active::before {
+  color: #555;
 }
