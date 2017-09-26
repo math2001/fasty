@@ -32,9 +32,11 @@
         {{- partial "loadcss" (dict "Dot" . "css" "list") -}}
     {{- else if eq .Kind "taxonomyTerm" -}}
         {{- partial "loadcss" (dict "Dot" . "css" "terms") -}}
-    {{ end }}
+    {{ end -}}
+    {{- if not .IsHome }}{{ partial "loadcss" (dict "Dot" . "css" "header") }}{{ end }}
+
 </head>
-<body>
+<body class="header-active">
     <div class="wrapper">
     {{- if not .IsHome -}}
     <header>
