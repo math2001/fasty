@@ -14,7 +14,7 @@ header {
   text-align: center;
   z-index: 10;
   background-color: var(--header-bg);
-  transform: translate(-10%, 5%);
+  transform: translate(-20px, 5px);
   opacity: 0;
   visibility: hidden;
   transition: transform .2s ease, opacity .2s ease, visibility .2s linear 0s;
