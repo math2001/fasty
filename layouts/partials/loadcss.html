@@ -1,7 +1,7 @@
-{{- if .Params.Dev -}}
+{{- if in ( printf "%s" ( .Dot.URL | absURL ) ) "localhost:1313" -}}
 <link rel="stylesheet" href="{{- (print "/css/" .css ".css") | relURL -}}">
 {{- else -}}
 <style>
-    {{ readFile ( relURL (print .Params.themefolderpath "/static/css/" .css ".css" ) ) | safeCSS }}
+    {{ readFile ( relURL (print .Site.Params.themefolderpath "/static/css/" .css ".css" ) ) | safeCSS }}
 </style>
 {{- end -}}

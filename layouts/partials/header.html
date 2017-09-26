@@ -10,27 +10,48 @@
     <link href="{{ .RSSLink }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end -}}
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@{{ .Site.Params.social.twitter }}">
+    <meta name="twitter:creator" content="@{{ .Site.Params.social.twitter }}">
 
+    <meta name="og:title" content="{{ .Title }}">
+    <meta name="og:image" content="{{ .Site.Params.avatar.path | absURL }}">
+    <meta name="og:url" content="{{ .Permalink }}">
+    <meta name="og:description" content="{{ if .Description }}{{ .Description }}{{ else if .Summary }}{{ .Summary }}{{ else }}{{ .Site.Params.Description }}{{ end }}">
     <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}{{- else -}}{{ .Site.Params.avatar.path }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
-    {{- partial "loadcss" (dict "Params" .Site.Params "css" "common") -}}
+    {{- partial "loadcss" (dict "Dot" . "css" "common") -}}
     {{- if eq .Kind "page" -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "colorschemes/tomorrow-night")}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "page")}}
+        {{- partial "loadcss" (dict "Dot" . "css" "colorschemes/tomorrow-night")}}
+        {{- partial "loadcss" (dict "Dot" . "css" "page")}}
     {{- else if .IsHome -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "home") -}}
+        {{- partial "loadcss" (dict "Dot" . "css" "home") -}}
     {{- else if or ( eq .Kind "taxonomy" ) ( eq .Kind "section" ) -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "list") -}}
+        {{- partial "loadcss" (dict "Dot" . "css" "list") -}}
     {{- else if eq .Kind "taxonomyTerm" -}}
-        {{- partial "loadcss" (dict "Params" .Site.Params "css" "terms") -}}
-    {{ end }}
+        {{- partial "loadcss" (dict "Dot" . "css" "terms") -}}
+    {{ end -}}
+    {{- if not .IsHome }}{{ partial "loadcss" (dict "Dot" . "css" "header") }}{{ end }}
+
 </head>
 <body>
     <div class="wrapper">
     {{- if not .IsHome -}}
     <header>
+        <span class="hide-header" id="hide-header"></span>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
-        {{- partial "nav" (dict "menus" .Site.Menus.main "extra_css_class" "header-nav") -}}
+        <nav class="header-splits">
+            {{ range $index, $value := .Site.Menus.main }}
+                {{ if not (eq (printf "%v" $value.Pre ) "") }}
+                    {{ if not (eq $index 0 ) }}</ul></div>{{ end }}
+                    <div class="header-split">
+                        <h3 class="header-split-title">{{ $value.Pre }}</h3>
+                        <ul class="header-split-list">
+                {{ end }}
+                <li><a href="{{ $value.URL | relURL }}">{{ $value.Name }}</a></li>
+            {{ end }}
+        </nav>
+
         {{- if not .Site.Params.disablesearch -}}
         <p class="header-search">
         <input type="search" placeholder="Search...">
@@ -39,3 +60,6 @@
     </header>
     {{- end }}
     <main>
+    {{ if not .IsHome }}
+        <span id="show-header" class="show-header"></span>
+    {{ end }}

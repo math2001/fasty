@@ -12,7 +12,9 @@ function loadCSS(stylesheets) {
     for (let stylesheet of stylesheets) {
         media = stylesheet.media ? ' media="' + stylesheet.media + '"' : ''
         link = '<link rel="stylesheet" type="text/css" href="'
-                + {{ "/" | relURL }} + "css/" + stylesheet.href + '"' + media + '>'
+        if (stylesheet.href.startsWith('http')) link += stylesheet.href
+        else link += {{ "/" | relURL }} + "css/" + stylesheet.href
+        link += '"' + media + '>'
         document.head.innerHTML += link
 
     }
@@ -27,11 +29,24 @@ function loadJs(scripts) {
     }
 }
 
-loadCSS([{ href: 'phone.css', media: 'screen and (max-width: 600px)' }])
+loadCSS([
+    { href: 'phone.css', media: 'screen and (max-width: 600px)' },
+    { href: 'https://fonts.googleapis.com/css?family=Roboto+Slab' },
+    { href: 'https://fonts.googleapis.com/css?family=Rosario' },
+    { href: 'https://fonts.googleapis.com/css?family=Oxygen Mono' },
+])
 </script>
 
 {{- if eq .Kind "page" -}}
 <script src="{{ "/" | relURL }}js/highlight.pack.js" async onload="hljs.initHighlightingOnLoad()"></script>
+<script>
+;(function () {
+    const show = document.querySelector('#show-header')
+    const hide = document.querySelector('#hide-header')
+    show.addEventListener('click', () => { document.body.classList.toggle('header-active') })
+    hide.addEventListener('click', () => { document.body.classList.toggle('header-active') })
+})()
+</script>
 {{- end -}}
 
 {{- if .Params.repository -}}

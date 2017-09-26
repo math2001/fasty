@@ -12,17 +12,7 @@
     <div class="home-actions">
         {{- with index ( where .Site.Pages "Params.isindex" "!=" true ) 0 -}}
         <div class="latest-row">
-            Checkout my last {{ .Section }}:
-            {{ if .Params.Categories -}}
-            <ul class="categories">
-                {{- range .Params.Categories }}
-                <li>
-                    <a href="{{ "/" | relURL }}categories/{{ . | urlize }}">{{ . }}</a>
-                </li>
-                {{ end }}
-            </ul>
-            {{ end -}}
-            <a href="{{ .URL }}">{{ .Title }}</a>
+            Checkout my last {{ .Section }}: <a href="{{ .URL }}">{{ .Title }}</a>
         </div>
         {{ end -}}
 
