@@ -35,6 +35,12 @@ body {
   line-height: 1.5;
 }
 
+h1, h2 {
+  letter-spacing: 2px;
+  font-weight: normal;
+}
+
+
 .wrapper {
   flex: 1 0 auto;
   position: relative;
