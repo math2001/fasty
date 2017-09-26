@@ -7,7 +7,7 @@
     </p>{{ end }}
     <h1>{{ .Title }}</h1>
 
-    <p class="description">{{ .Site.Params.Description }}</p>
+    <p class="description">{{ .Site.Params.Description | emojify }}</p>
 
     <div class="home-actions">
         {{- with index ( where .Site.Pages "Params.isindex" "!=" true ) 0 -}}

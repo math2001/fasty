@@ -34,6 +34,16 @@
 <div class="page-bottom">
     <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
     {{- if or (.PrevInSection) (.NextInSection) -}}
+    <h4>Share this post</h4>
+    {{ $dot := . }}
+    <ul class="page-share">{{ range $medianame, $urltemplate := .Site.Params.Share }}
+    <li>
+        
+        <a href="{{ printf $urltemplate $dot.Title $dot.Permalink }}" target="_blank">
+            <img src="{{ "/img/" | relURL }}mediaicons.svg#{{ $medianame }}" alt="Share on {{ $medianame }}">
+        </a>
+    </li> 
+    {{ end }}</ul>
     <h4>Read an other {{ .Section }}</h4>
     <div class="page-read-other">
         {{ if .PrevInSection }}
