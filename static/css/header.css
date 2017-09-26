@@ -28,16 +28,24 @@ body.header-active header {
   overflow: auto;
 }
 
-.header-back-arrow {
-  /* width: 15px; */
-  /* height: 3px; */
-  /* background-color: currentColor; */
+.show-header {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  border: 2px solid #888;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+}
+
+.hide-header {
   --stroke-width: 2px;
   display: inline-block;
   margin-top: 20px;
 }
 
-.header-back-arrow::before {
+.hide-header::before {
   content: "";
   display: inline-block;
   width: 9px;
@@ -49,7 +57,7 @@ body.header-active header {
   transform-origin: bottom left;
 }
 
-.header-back-arrow::after {
+.hide-header::after {
   content: "";
   width: 20px;
   background-color: currentColor;
