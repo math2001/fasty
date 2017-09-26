@@ -1,11 +1,14 @@
 :root {
   --page-bg: hsla(195, 55%, 98%, 1);
-  --monospace: Inconsolata, menlo, consolas;
+  --monospace: Menlo, Inconsolata, consolas;
+  --monospace-secondary: Inconsolata, consolas;
   --color: #333;
   --font-mute: hsla(214, 3%, 59%, 1);
   --purple: hsla(232, 59%, 58%, 1);
   --header-bg: hsl(194, 4%, 19%);
+  --header-bg: transparent;
   --header-fg: #ccc;
+  --header-fg: inherit;
   --code-bg: #F3F3F3;
 }
 
@@ -14,9 +17,7 @@ html {
   width: 100%;
 }
 
-* { 
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 a {
   color: var(--purple);
@@ -25,7 +26,7 @@ a {
 body {
   display: flex;
   flex-direction: column;
-  font-family: var(--monospace);
+  font-family: Roboto Slab, Verdana, sans-serif;
   margin: 0;
   background: var(--page-bg);
   height: 100%;
@@ -72,8 +73,10 @@ header a {
 }
 
 .nav-separator {
-  border-left: 1px solid hsl(0, 0%, 42%);
-  height: 1.2em;
+  border-top: 1px solid hsl(0, 0%, 42%);
+  /* height: 1.2em; */
+  width: 10px;
+  margin: 0 5px;
   vertical-align: middle;
 }
 
@@ -89,6 +92,8 @@ header a {
   font-size: 100%;
   outline: none;
 }
+
+.tags, .categories { font-family: var(--monospace-secondary); }
 
 .tags {
   list-style: none;

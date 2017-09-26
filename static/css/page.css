@@ -78,8 +78,14 @@
 
 /* content */
 
+code {
+  font-family: var(--monospace);
+  font-size: .9em;
+}
+
 .hljs {
-  padding: 20px calc(var(--x-margin) + 3%);
+  margin: 20px var(--x-margin);
+  padding: 20px;
 }
 
 :not(pre) > code {
