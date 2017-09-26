@@ -28,6 +28,35 @@ body.header-active header {
   overflow: auto;
 }
 
+.header-back-arrow {
+  /* width: 15px; */
+  /* height: 3px; */
+  /* background-color: currentColor; */
+  --stroke-width: 2px;
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.header-back-arrow::before {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border: var(--stroke-width) solid currentColor;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  transform: translate(12px, -1px) rotate(45deg);
+  transform-origin: bottom left;
+}
+
+.header-back-arrow::after {
+  content: "";
+  width: 20px;
+  background-color: currentColor;
+  height: var(--stroke-width);
+  display: inline-block;
+}
+
 .header-brand {
   font-size: 200%;
 }

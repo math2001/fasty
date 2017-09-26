@@ -40,6 +40,7 @@
     <div class="wrapper">
     {{- if not .IsHome -}}
     <header>
+        <span class="header-back-arrow"></span>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
         <nav class="header-splits">
             {{ range $index, $value := .Site.Menus.main }}
