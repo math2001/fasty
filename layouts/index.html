@@ -3,7 +3,7 @@
 <div class="home-content">
     {{- with .Site.Params.Avatar -}}
     <p class="avatar-row">
-        <img class=avatar src="{{ .path }}" alt="{{ .alt }}">
+        <img class=avatar src="{{ with .vector }}{{ . }}{{ else }}{{ .raster }}{{ end }}" alt="{{ .alt }}">
     </p>{{ end }}
     <h1>{{ .Title }}</h1>
 
