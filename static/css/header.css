@@ -27,6 +27,7 @@ body.header-active header {
   overflow: auto;
 }
 
+.show-header, .hide-header { cursor: pointer; }
 .show-header {
   display: inline-block;
   width: 20px;
