@@ -39,6 +39,8 @@ loadCSS([
 
 {{- if eq .Kind "page" -}}
 <script src="{{ "/" | relURL }}js/highlight.pack.js" async onload="hljs.initHighlightingOnLoad()"></script>
+{{- end -}}
+{{- if not .IsHome -}}
 <script>
 ;(function () {
     const show = document.querySelector('#show-header')
