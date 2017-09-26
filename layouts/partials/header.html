@@ -41,7 +41,18 @@
     {{- if not .IsHome -}}
     <header>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
-        {{- partial "nav" (dict "menus" .Site.Menus.main "extra_css_class" "header-nav") -}}
+        <nav class="header-splits">
+            {{ range $index, $value := .Site.Menus.main }}
+                {{ if not (eq (printf "%v" $value.Pre ) "") }}
+                    {{ if not (eq $index 0 ) }}</ul></div>{{ end }}
+                    <div class="header-split">
+                        <h3>{{ $value.Pre }}</h3>
+                        <ul>
+                {{ end }}
+                <li><a href="{{ $value.URL | relURL }}">{{ $value.Name }}</a></li>
+            {{ end }}
+        </nav>
+
         {{- if not .Site.Params.disablesearch -}}
         <p class="header-search">
         <input type="search" placeholder="Search...">
