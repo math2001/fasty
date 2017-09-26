@@ -39,6 +39,14 @@ loadCSS([
 
 {{- if eq .Kind "page" -}}
 <script src="{{ "/" | relURL }}js/highlight.pack.js" async onload="hljs.initHighlightingOnLoad()"></script>
+<script>
+;(function () {
+    const show = document.querySelector('#show-header')
+    const hide = document.querySelector('#hide-header')
+    show.addEventListener('click', () => { document.body.classList.toggle('header-active') })
+    hide.addEventListener('click', () => { document.body.classList.toggle('header-active') })
+})()
+</script>
 {{- end -}}
 
 {{- if .Params.repository -}}
