@@ -1,0 +1,48 @@
+body.header-active { overflow: hidden; }
+
+body.header-active main,
+body.header-active footer {
+  filter: blur(2px);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  z-index: 10;
+  background-color: var(--header-bg);
+  transform: translate(-10%, 5%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform .2s ease, opacity .2s ease, visibility .2s linear 0s;
+  /* transition-delay: 0; */
+}
+
+body.header-active header {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0, 0);
+  overflow: auto;
+}
+
+.header-brand {
+  font-size: 9vw;
+}
+
+.header-nav .nav-list {
+  padding: 0;
+  list-style: none;
+}
+
+.header-nav .nav-list-item {
+  margin: 3%;
+  font-size: 7vw;
+}
+
+header a {
+  color: var(--header-fg);
+  text-decoration: none;
+}
