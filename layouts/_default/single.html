@@ -50,6 +50,12 @@
                 <img src="/img/facebook.svg" alt="Share on facebook">
             </a>
         </li> 
+        <li>
+            <a href="https://dev.to/new" target="_blank"
+                onclick="window.open(this.href, 'devto-share', 'width=580,height=300');return false;">
+                <img src="/img/dev.to.svg" alt="Share on dev.to">
+            </a>
+        </li> 
     </ul>
     {{- if or (.PrevInSection) (.NextInSection) -}}
     <h4>Read an other {{ .Section }}</h4>
