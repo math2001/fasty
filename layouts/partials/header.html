@@ -58,6 +58,14 @@
         <input type="search" placeholder="Search...">
         </p>
         {{- end -}}
+
+        <ul class="header-social">{{ range $medianame, $username := .Site.Params.Social }}
+            <li class="header-social-">
+                <a href="http://{{ $medianame }}.com/{{ $username }}">
+                    <img src="{{ print "img/" $medianame ".svg" | relURL }}" alt="{{ $medianame }}">
+                </a>
+            </li>
+        {{ end }}</ul>
     </header>
     {{- end }}
     <main>
