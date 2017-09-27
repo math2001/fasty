@@ -63,7 +63,8 @@
 
         <ul class="header-social">{{ range $medianame, $username := .Site.Params.Social }}
             <li class="header-social-">
-                <a href="http://{{ $medianame }}.com/{{ $username }}">
+                <a target="_blank"
+                  href="{{ if in $username "http" }}{{ $username }}{{ else }}http://{{ $medianame }}.com/{{ $username }}{{ end }}">
                     <img src="{{ print "img/" $medianame ".svg" | relURL }}" alt="{{ $medianame }}">
                 </a>
             </li>
