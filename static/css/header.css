@@ -110,6 +110,10 @@ header a {
   color: #555;
 }
 
+.header-bio {
+  margin: 40px 0;
+}
+
 .header-social {
   margin-top: 40px;
   list-style: none;

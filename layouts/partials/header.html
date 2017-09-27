@@ -59,6 +59,8 @@
         </p>
         {{- end -}}
 
+        <p class="header-bio">{{ .Site.Params.Bio | markdownify | emojify }}</p>
+
         <ul class="header-social">{{ range $medianame, $username := .Site.Params.Social }}
             <li class="header-social-">
                 <a href="http://{{ $medianame }}.com/{{ $username }}">
