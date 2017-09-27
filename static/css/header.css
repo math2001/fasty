@@ -111,6 +111,7 @@ header a {
 }
 
 .header-social {
+  margin-top: 40px;
   list-style: none;
   padding: 0;
 }
