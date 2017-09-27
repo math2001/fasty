@@ -27,6 +27,10 @@
 
 </div>
 
+{{- if .IsDraft }}
+<p class="page-warning">{{ ":warning:" | emojify }} This post is a draft. {{ ":warning:" | emojify }}</p>
+{{ end -}}
+
 <section class="page-content">
     {{- .Content -}}
 </section>
