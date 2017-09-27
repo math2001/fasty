@@ -33,15 +33,21 @@
 
 <div class="page-bottom">
     <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
+    <ul class="page-share-list">
+        <li>
+            <a href="{{ print "https://twitter.com/intent/tweet?" ( querify "text" $.Title "url" $.Permalink ) | safeURL }}" target="_blank"
+                onclick="window.open(this.href, 'twitter-share', 'width=580,height=300');return false;">
+                <img src="/img/twitter.svg" alt="Share on twitter">
+            </a>
+        </li> 
+        <li>
+            <a href="{{ print "https://facebook.com/sharer/sharer.php?" ( querify "u" $.Permalink ) | safeURL }}" target="_blank"
+                onclick="window.open(this.href, 'facebook-share', 'width=580,height=300');return false;">
+                <img src="/img/facebook.svg" alt="Share on facebook">
+            </a>
+        </li> 
+    </ul>
     {{- if or (.PrevInSection) (.NextInSection) -}}
-    {{ $dot := . }}
-    <ul class="page-share-list">{{ range $medianame, $urltemplate := .Site.Params.Share }}
-    <li>
-        <a href="{{ printf $urltemplate $dot.Title $dot.Permalink }}" target="_blank">
-            <img src="{{ "/img/" | relURL }}{{ $medianame }}.svg#{{ $medianame }}" alt="Share on {{ $medianame }}">
-        </a>
-    </li> 
-    {{ end }}</ul>
     <h4>Read an other {{ .Section }}</h4>
     <div class="page-read-other">
         {{ if .PrevInSection }}
