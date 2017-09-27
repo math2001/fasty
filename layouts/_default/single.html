@@ -34,13 +34,11 @@
 <div class="page-bottom">
     <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
     {{- if or (.PrevInSection) (.NextInSection) -}}
-    <h4>Share this post</h4>
     {{ $dot := . }}
-    <ul class="page-share">{{ range $medianame, $urltemplate := .Site.Params.Share }}
+    <ul class="page-share-list">{{ range $medianame, $urltemplate := .Site.Params.Share }}
     <li>
-        
         <a href="{{ printf $urltemplate $dot.Title $dot.Permalink }}" target="_blank">
-            <img src="{{ "/img/" | relURL }}mediaicons.svg#{{ $medianame }}" alt="Share on {{ $medianame }}">
+            <img src="{{ "/img/" | relURL }}{{ $medianame }}.svg#{{ $medianame }}" alt="Share on {{ $medianame }}">
         </a>
     </li> 
     {{ end }}</ul>
