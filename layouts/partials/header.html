@@ -60,7 +60,7 @@
         </p>
         {{- end -}}
 
-        <p class="header-bio">{{ .Site.Params.Bio | markdownify | emojify }}</p>
+        <p class="header-bio">{{ .Site.Params.Description | markdownify | emojify }}</p>
 
         <ul class="header-social">{{ range $medianame, $username := .Site.Params.Social }}
             <li class="header-social-">
