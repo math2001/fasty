@@ -36,8 +36,8 @@ function getCommentElementFrom(comment) {
     <article class="page-comment">
         <a class="page-comment-author" href="https://github.com/${comment.user.login}" target="_blank">
             <img src="${comment.user.avatar_url}" alt="Avatar of ${comment.user.login}"
-                class="page-comment-author-avatar">
-            <p class="page-comment-author-name">${comment.user.login}</p>
+                class="page-comment-author-avatar"><!--
+            --><p class="page-comment-author-name">${comment.user.login}</p>
         </a>
         <div class="page-comment-content">${comment.body_html}</div>
     </article>

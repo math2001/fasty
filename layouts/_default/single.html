@@ -31,9 +31,7 @@
 <p class="page-warning">{{ ":warning:" | emojify }} This post is a draft. {{ ":warning:" | emojify }}</p>
 {{ end -}}
 
-<section class="page-content">
-    {{- .Content -}}
-</section>
+<section class="page-content">{{ .Content }}</section>
 
 <div class="page-bottom">
     <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>

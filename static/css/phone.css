@@ -1,5 +1,26 @@
 .list-content .categories,
-/* .list-content-tags, */
 .list-content-reading-time {
   display: none;
+}
+
+.page-comment {
+  display: block;
+}
+
+.page-comment-author {
+  margin-bottom: 10px;
+}
+
+.page-comment-author-avatar {
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  width: auto;
+  margin: 0;
+  margin-right: 5px;
+}
+
+.page-comment-author-name {
+  display: inline-block;
+  text-decoration: inherit;
 }
