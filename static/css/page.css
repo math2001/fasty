@@ -98,6 +98,16 @@
   text-decoration: underline;
 }
 
+.page-comment-author-name {
+  margin: 0;
+  font-size: 80%;
+  text-align: center;
+}
+.page-comment-author-avatar {
+  width: 50px;
+  margin: 0 10px;
+}
+
 .page-comment-content {
   flex: 1;
   background-color: #fff;
@@ -107,16 +117,6 @@
 .page-comment-content p:first-of-type {
   margin-top: 0;
 }
-
-.page-comment-author-name {
-  margin: 0;
-  font-size: 80%;
-}
-.page-comment-author-avatar {
-  width: 50px;
-  margin: 0 10px;
-}
-
 .page-date {
   font-style: italic;
   color: var(--font-mute);
