@@ -52,8 +52,15 @@ loadCSS([
 {{- end -}}
 {{- end -}}
 
+{{- if isset .Site.Params "githubcommentsrepo" }}
 {{- with .Params.CommentsIssueId }}
 <script onload="loadGithubCommentsFrom('{{ $.Site.Params.githubcommentsrepo }}', {{ . }}, '{{ "/js/showdown.js" | relURL }}')" src="{{ "/js/github-comments.js" | relURL }}" async></script>
+{{- else -}}
+<script>
+    document.querySelector('#page-comments').innerHTML = 
+    '<p class="page-comment-block">Comments are blocked for this {{ .Section }}</p>'
+</script>
+{{ end -}}
 {{ end -}}
 
 {{ template "_internal/google_analytics.html" . }}
