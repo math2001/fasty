@@ -8,7 +8,9 @@
 }
 
 .page-comment-author {
+  margin-left: 5px;
   margin-bottom: 10px;
+  font-size: 90%;
 }
 
 .page-comment-author-avatar {
@@ -23,4 +25,11 @@
 .page-comment-author-name {
   display: inline-block;
   text-decoration: inherit;
+}
+
+.page-comment-author::after {
+  content: "said";
+  font-size: inherit;
+  font-style: italic;
+  color: #888;
 }

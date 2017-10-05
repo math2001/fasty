@@ -92,15 +92,15 @@
   margin-right: 10px;
   color: inherit;
   text-decoration: none;
+  font-size: 80%;
 }
 
-.page-comment-author:hover {
+.page-comment-author:hover .page-comment-author-name {
   text-decoration: underline;
 }
 
 .page-comment-author-name {
   margin: 0;
-  font-size: 80%;
   text-align: center;
 }
 .page-comment-author-avatar {
