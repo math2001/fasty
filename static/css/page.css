@@ -114,9 +114,8 @@
   padding: 20px;
   box-shadow: 5px 5px 20px #ddd;
 }
-.page-comment-content p:first-of-type {
-  margin-top: 0;
-}
+.page-comment-content p:first-of-type { margin-top: 0; }
+.page-comment-content p:last-of-type { margin-bottom: 0; }
 .page-date {
   font-style: italic;
   color: var(--font-mute);
