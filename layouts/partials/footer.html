@@ -20,15 +20,6 @@ function loadCSS(stylesheets) {
     }
 }
 
-function loadJs(scripts) {
-    for (let key in scripts) {
-        tag = document.createElement('script')
-        tag.onload = {{ "/" | relURL }} + 'js/' + scripts[key]
-        tag.src = key
-        document.body.appendChild(tag)
-    }
-}
-
 loadCSS([
     { href: 'phone.css', media: 'screen and (max-width: 600px)' },
     { href: 'https://fonts.googleapis.com/css?family=Roboto+Slab' },
@@ -60,6 +51,10 @@ loadCSS([
 </script>
 {{- end -}}
 {{- end -}}
+
+{{- with .Params.CommentsIssueId }}
+<script onload="loadGithubCommentsFrom('{{ $.Site.Params.githubcommentsrepo }}', {{ . }}, '{{ "/js/showdown.js" | relURL }}')" src="{{ "/js/github-comments.js" | relURL }}" async></script>
+{{ end -}}
 
 {{ template "_internal/google_analytics.html" . }}
 
