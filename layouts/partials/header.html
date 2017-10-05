@@ -17,7 +17,7 @@
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:image" content="{{ .Site.Params.Avatar.Raster | absURL }}">
     <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:description" content="{{ if .Description }}{{ .Description | emojify }}{{ else if .Summary }}{{ .Summary | emojify }}{{ else }}{{ .Site.Params.Description | emojify }}{{ end }}">
+    <meta property="og:description" content="{{ if .Description }}{{ .Description | emojify | chomp }}{{ else if .Summary }}{{ .Summary | emojify | chomp }}{{ else }}{{ .Site.Params.Description | emojify | chomp }}{{ end }}">
 
     <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}{{- else -}}{{ .Site.Params.avatar.raster }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
