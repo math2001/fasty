@@ -71,6 +71,58 @@
   padding: 1px 20px;
 }
 
+.page-comments {
+  max-width: 100%;
+  width: 600px;
+  margin: auto;
+  --border-color: #ccc;
+}
+
+.page-comment {
+  display: flex;
+  width: 100%;
+  margin: 50px 0;
+  padding: 10px;
+  align-items: center;
+}
+
+.page-comment-author {
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+}
+
+.page-comment-author::after {
+  content: "";
+  display: inline-block;
+  display: none;
+  border-right: 1px solid #ccc;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.page-comment-content {
+  flex: 1;
+  text-align: left;
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 5px 5px 20px #ddd;
+}
+.page-comment-content p:first-of-type {
+  margin-top: 0;
+}
+
+.page-comment-author-name {
+  margin: 0;
+  font-size: 80%;
+}
+.page-comment-author-avatar {
+  width: 50px;
+  margin: 0 10px;
+}
+
 .page-date {
   font-style: italic;
   color: var(--font-mute);
