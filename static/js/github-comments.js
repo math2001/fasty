@@ -34,11 +34,11 @@ function getComments(repo, id) {
 function getCommentElementFrom(comment) {
     return `
     <article class="page-comment">
-        <div class="page-comment-author">
+        <a class="page-comment-author" href="https://github.com/${comment.user.login}" target="_blank">
             <img src="${comment.user.avatar_url}" alt="Avatar of ${comment.user.login}"
                 class="page-comment-author-avatar">
             <p class="page-comment-author-name">${comment.user.login}</p>
-        </div>
+        </a>
         <div class="page-comment-content">${comment.body_html}</div>
     </article>
     `

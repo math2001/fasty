@@ -90,6 +90,12 @@
   display: inline-block;
   position: relative;
   margin-right: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.page-comment-author:hover {
+  text-decoration: underline;
 }
 
 .page-comment-author::after {
