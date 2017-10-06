@@ -131,6 +131,10 @@
   vertical-align: middle;
 }
 
+.page-comments-none {
+  text-align: center;
+}
+
 .page-share, .page-share-list {
   display: inline-block;
   vertical-align: middle;
