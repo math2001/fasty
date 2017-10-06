@@ -127,7 +127,8 @@
 
 .page-comments-padlock {
   display: inline-block;
-  height: 40px;
+  height: 30px;
+  width: 30px;
   vertical-align: middle;
 }
 
@@ -151,7 +152,7 @@
   margin: 5px;
 }
 
-.page-share-list img {
+.page-share-list svg {
   width: 25px;
   height: 25px;
 }
