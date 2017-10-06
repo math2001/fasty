@@ -61,7 +61,7 @@ loadCSS([
     document.querySelector('#page-comments').innerHTML = 
     `<p class="page-comment-blocked">
         <img src="{{ "/img/padlock.svg" | relURL }}" alt="padlock" class="page-comment-padlock">
-        Comments are blocked for this {{ .Section }}
+        Comments are blocked for this {{ .Section | safeJS }}
     </p>`
 </script>
 {{ end -}}
