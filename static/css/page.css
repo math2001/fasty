@@ -131,7 +131,8 @@
   vertical-align: middle;
 }
 
-.page-comments-none {
+.page-comments-none,
+.page-comments-loading {
   text-align: center;
 }
 

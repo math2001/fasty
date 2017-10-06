@@ -25,6 +25,8 @@ const getMarkdownConverter = (function () {
     }
 })
 
+const pageComments = document.querySelector('#page-comments')
+
 function getComments(repo, id) {
     const url = `https://api.github.com/repos/${repo}/issues/${id}/comments`
     return fetch(url)
@@ -53,17 +55,18 @@ async function main(repo, id) {
     let rcomments = getComments(repo, id)
     let [comments] = [await rcomments]
 
-    const pageComments = document.querySelector('#page-comments')
     if (comments.length === 0) {
         pageComments.innerHTML = NO_COMMENTS
         return
     }
+    pageComments.innerHTML = ''
     for (comment of comments) {
         pageComments.innerHTML += getCommentElementFrom(comment)
     }
 }
 
 window.loadGithubCommentsFrom = function (repo, id, showdown) {
+    pageComments.innerHTML = '<p class="page-comments-loading">Loading comments...</p>'
     const script = document.createElement('script')
     script.src = showdown
     script.onload = () => {
