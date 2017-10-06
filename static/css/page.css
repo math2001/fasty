@@ -121,11 +121,11 @@
   color: var(--font-mute);
 }
 
-.page-comment-blocked {
+.page-comments-blocked {
   text-align: center;
 }
 
-.page-comment-padlock {
+.page-comments-padlock {
   display: inline-block;
   height: 40px;
   vertical-align: middle;
