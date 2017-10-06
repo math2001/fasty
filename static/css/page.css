@@ -121,6 +121,16 @@
   color: var(--font-mute);
 }
 
+.page-comment-blocked {
+  text-align: center;
+}
+
+.page-comment-padlock {
+  display: inline-block;
+  height: 40px;
+  vertical-align: middle;
+}
+
 .page-share, .page-share-list {
   display: inline-block;
   vertical-align: middle;
