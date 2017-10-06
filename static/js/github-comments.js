@@ -27,6 +27,18 @@ const getMarkdownConverter = (function () {
 
 const pageComments = document.querySelector('#page-comments')
 
+function addNewCommentLink(repo, id) {
+    const p = document.createElement('p')
+    p.textContent = 'Share your thoughts! '
+    const link = document.createElement('a')
+    link.href = `https://github.com/${repo}/issues/${id}#new_comment_field`
+    link.target = '_blank'
+    link.rel = 'noopener'
+    link.textContent = 'Add a comment'
+    p.appendChild(link)
+    pageComments.parentElement.insertBefore(p, pageComments)
+}
+
 function getComments(repo, id) {
     const url = `https://api.github.com/repos/${repo}/issues/${id}/comments`
     return fetch(url)
@@ -67,6 +79,7 @@ async function main(repo, id) {
 
 window.loadGithubCommentsFrom = function (repo, id, showdown) {
     pageComments.innerHTML = '<p class="page-comments-loading">Loading comments...</p>'
+    addNewCommentLink(repo, id)
     const script = document.createElement('script')
     script.src = showdown
     script.onload = () => {
