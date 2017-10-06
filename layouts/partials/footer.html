@@ -1,9 +1,29 @@
     </main>
 </div>
 <footer>
-    {{ with .Site.Copyright }}<p>{{ . }}.
-    Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, theme
-    <a href="https://github.com/math2001/fasty">Fasty</a> by <a href="https://github.com/math2001">@math2001</a>.</p>{{ end }}
+    <div class="footer-splits">
+        <div class="footer-split">
+            <h4>About me</h4>
+            {{ .Site.Params.Description }}
+        </div>
+        <div class="footer-split">
+            <h4>Browse by</h4>
+            <ul>{{ range .Site.Menus.footer }}
+                <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+            {{ end }}</ul>
+        </div>
+        <div class="footer-split">
+            <h4>Social</h4>
+            <ul>{{ range .Site.Params.Social }}
+                <li><a href="{{ .url }}"><svg><use href="#si-{{ .name }}"></svg> {{ .username }}</a></li>
+            {{ end }}</ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        {{ with .Site.Copyright }}<p>{{ . }}.
+        Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, theme
+        <a href="https://github.com/math2001/fasty">Fasty</a> by <a href="https://github.com/math2001">@math2001</a>.</p>{{ end }}
+    </div>
 </footer>
 
 <script type="text/javascript">
