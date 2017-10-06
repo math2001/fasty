@@ -57,8 +57,8 @@
     </ul>
     <section id="page-comments" class="page-comments"></section>
     {{- if or (.PrevInSection) (.NextInSection) -}}
-    <h4>Read an other {{ .Section }}</h4>
-    <div class="page-read-other">
+    <h4 class="page-read-other">Read an other {{ .Section }}</h4>
+    <div>
         {{ if .PrevInSection }}
         <p>← <a href="{{ .PrevInSection.RelPermalink }}">{{ .PrevInSection.Title }}</a></p>
         {{ end -}}
