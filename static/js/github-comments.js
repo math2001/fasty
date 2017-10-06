@@ -1,5 +1,9 @@
 ;(function () {
 
+const NO_COMMENTS = `
+    <p class="page-comments-none">No comments for now.</p>
+`
+
 function getReactions(repo, id) {
     return Promise.resolve(null)
 }
@@ -50,6 +54,10 @@ async function main(repo, id) {
     let [comments] = [await rcomments]
 
     const pageComments = document.querySelector('#page-comments')
+    if (comments.length === 0) {
+        pageComments.innerHTML = NO_COMMENTS
+        return
+    }
     for (comment of comments) {
         pageComments.innerHTML += getCommentElementFrom(comment)
     }

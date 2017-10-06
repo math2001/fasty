@@ -52,7 +52,8 @@ loadCSS([
 {{- end -}}
 {{- end -}}
 
-{{- if isset .Site.Params "githubcommentsrepo" }}
+
+{{- if and ( isset .Site.Params "githubcommentsrepo" ) ( eq .Kind "page" ) }}
 {{- with .Params.CommentsIssueId }}
 <script onload="loadGithubCommentsFrom('{{ $.Site.Params.githubcommentsrepo }}', {{ . }}, '{{ "/js/showdown.js" | relURL }}')" src="{{ "/js/github-comments.js" | relURL }}" async></script>
 {{- else -}}
