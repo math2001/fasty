@@ -40,36 +40,14 @@
     <div class="wrapper">
     {{- if not .IsHome -}}
     <header>
-        <span class="hide-header" id="hide-header"></span>
         <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
-        <nav class="header-splits">
-            {{ range $index, $value := .Site.Menus.main }}
-                {{ if not (eq (printf "%v" $value.Pre ) "") }}
-                    {{ if not (eq $index 0 ) }}</ul></div>{{ end }}
-                    <div class="header-split">
-                        <h3 class="header-split-title">{{ $value.Pre }}</h3>
-                        <ul class="header-split-list">
+        <nav class="header-nav">
+            <ul>
+                {{ range .Site.Menus.main }}
+                <li class="header-nav-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
                 {{ end }}
-                <li><a href="{{ $value.URL | relURL }}">{{ $value.Name }}</a></li>
-            {{ end }}
+            </ul>
         </nav>
-
-        {{- if not .Site.Params.disablesearch -}}
-        <p class="header-search">
-        <input type="search" placeholder="Search...">
-        </p>
-        {{- end -}}
-
-        <p class="header-bio">{{ .Site.Params.Description | markdownify | emojify }}</p>
-
-        <ul class="header-social">{{ range $medianame, $username := .Site.Params.Social }}
-            <li class="header-social-">
-                <a target="_blank"
-                  href="{{ if in $username "http" }}{{ $username }}{{ else }}http://{{ $medianame }}.com/{{ $username }}{{ end }}">
-                    <img src="{{ print "img/" $medianame ".svg" | relURL }}" alt="{{ $medianame }}">
-                </a>
-            </li>
-        {{ end }}</ul>
     </header>
     {{- end }}
     <main>
