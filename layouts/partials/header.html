@@ -41,14 +41,16 @@
     <div class="wrapper">
     {{- if not .IsHome -}}
     <header>
-        <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
-        <nav class="header-nav">
-            <ul>
-                {{ range .Site.Menus.main }}
-                <li class="header-nav-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
-                {{ end }}
-            </ul>
-        </nav>
+        <div class="header-inner">
+            <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
+            <nav class="header-nav">
+                <ul>
+                    {{ range .Site.Menus.main }}
+                    <li class="header-nav-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
     </header>
     {{- end }}
     <main>
