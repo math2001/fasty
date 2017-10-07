@@ -166,8 +166,14 @@ footer {
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--border-color);
   text-align: center;
+}
+.footer-bottom::before {
+  content: '';
+  width: 200px;
+  margin: auto;
+  display: block;
+  border-top: 1px solid var(--border-color);
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
