@@ -1,12 +1,11 @@
 :root {
-  --page-bg: hsla(195, 55%, 98%, 1);
+  --light-blue: hsla(195, 55%, 98%, 1);
   --monospace: Menlo, Inconsolata, consolas, monospace;
   --monospace-secondary: Inconsolata, consolas, monospace;
   --color: #333;
   --font-mute: hsla(214, 3%, 59%, 1);
+  --font-mute: #888;
   --purple: hsla(232, 59%, 58%, 1);
-  --header-bg: rgba(255, 255, 255, 0.8);
-  --header-fg: inherit;
   --code-bg: #F3F3F3;
 }
 
@@ -26,7 +25,8 @@ body {
   flex-direction: column;
   font-family: Roboto Slab, Roboto, Calibri, Corbel, sans-serif;
   margin: 0;
-  background: var(--page-bg);
+  background: var(--light-blue);
+  background-color: #fff;
   height: 100%;
   position: relative;
   color: #333;
