@@ -3,19 +3,19 @@
 <footer>
     <div class="footer-splits">
         <div class="footer-split">
-            <h4>About me</h4>
-            {{ .Site.Params.Description }}
+            <h4 class="footer-split-title">About me</h4>
+            {{ .Site.Params.Description | markdownify | emojify }}
         </div>
         <div class="footer-split">
-            <h4>Browse by</h4>
+            <h4 class="footer-split-title">Browse by</h4>
             <ul>{{ range .Site.Menus.footer }}
                 <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
             {{ end }}</ul>
         </div>
         <div class="footer-split">
-            <h4>Social</h4>
-            <ul>{{ range .Site.Params.Social }}
-                <li><a href="{{ .url }}"><svg><use href="#si-{{ .name }}"></svg> {{ .username }}</a></li>
+            <h4 class="footer-split-title">Social</h4>
+            <ul class="footer-social-links">{{ range .Site.Params.Social }}
+                <li><a href="{{ .url }}" class="footer-social-link" data-tooltip="{{ .username }}"><svg><use href="#si-{{ .name }}"></svg></a></li>
             {{ end }}</ul>
         </div>
     </div>

@@ -7,6 +7,7 @@
   --font-mute: #888;
   --purple: hsla(232, 59%, 58%, 1);
   --code-bg: #F3F3F3;
+  --border-color: #EEE;
 }
 
 html {
@@ -46,15 +47,6 @@ h1, h2 {
 
 main {
   margin-bottom: 20px;
-}
-
-.header-search input {
-  font-family: inherit;
-  background: none;
-  border: none;
-  color: inherit;
-  font-size: 100%;
-  outline: none;
 }
 
 .tags, .categories { font-family: var(--monospace-secondary); }
@@ -107,9 +99,75 @@ main {
 }
 
 footer {
-  text-align: center;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid var(--border-color);
   padding: 0 10px;
+}
+
+.footer-splits {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 960px;
+  margin: auto;
+}
+
+.footer-split {
+  flex: 1;
+  padding: 10px 10px;
+  position: relative;
+}
+
+.footer-split:not(:last-of-type) {
+  margin-right: 10px;
+  padding-right: 20px;
+}
+
+.footer-split-title {
+  margin: 5px 0;
+}
+
+.footer-split:not(:last-of-type)::before,
+.footer-split:not(:last-of-type)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -5px;
+  top: calc(50% - 17px); /* half of the height taking into account the rotation */
+  height: 20px;
+  border-left: 3px solid var(--border-color);
+  transform: rotate(-30deg);
+  transform-origin: bottom;
+}
+
+.footer-split:not(:last-of-type)::after {
+  transform-origin: top;
+  transform: rotate(30deg);
+  top: calc(50%);
+}
+
+.footer-social-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social-links li {
+  display: inline-block;
+}
+
+.footer-social-link {
+  text-decoration: none;
+  color: inherit;
+  margin: 0 5px;
+}
+
+.footer-social-link svg {
+  --size: 25px;
+  width: var(--size);
+  height: var(--size);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  text-align: center;
 }
 
 /* geektnt.com/how-to-remove-x-from-search-input-field-on-chrome-and-ie.html */
@@ -117,4 +175,3 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none;  }
-

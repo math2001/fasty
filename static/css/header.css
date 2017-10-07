@@ -5,8 +5,7 @@ header {
   padding: 10px 5px;
   justify-content: space-between;
   align-content: center;
-  border-bottom: 1px solid #EEE;
-  /* background-color: var(--light-blue2); */
+  border-bottom: 1px solid var(--border-color);
 }
 
 header a {
