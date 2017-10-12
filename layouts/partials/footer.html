@@ -20,9 +20,12 @@
         </div>
     </div>
     <div class="footer-bottom">
-        {{ with .Site.Copyright }}<p>{{ . }}.
-        Powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, theme
-        <a href="https://github.com/math2001/fasty">Fasty</a> by <a href="https://github.com/math2001">@math2001</a>.</p>{{ end }}
+        <p>
+            {{ with .Site.Copyright }}{{ . }}.{{ end }}
+            {{ if .Site.Params.SiteCode }}
+            Code over at <a href="https://github.com/{{ .Site.Params.SiteCode }}"><code>{{ .Site.Params.SiteCode }}</code></a>.
+            {{ end }}
+        </p>
     </div>
 </footer>
 
