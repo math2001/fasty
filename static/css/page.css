@@ -39,7 +39,7 @@
   background: white;
   text-align: justify;
   box-shadow: 5px 5px 20px #ddd;
-  padding: 10px 20px;
+  padding: 10px 30px;
 }
 
 .page-content hr {
@@ -47,7 +47,6 @@
   border-top: 4px solid hsla(192, 16%, 92%, 1);
   margin: 30px auto;
 }
-
 
 .page-content img {
   max-width: 100%;
@@ -166,7 +165,9 @@ code {
 }
 
 blockquote {
-  border-left: 4px solid #ddd;
+  border-left: 6px solid #ddd;
+  margin-left: 0;
+  padding-left: 10px;
   color: #aaa;
 }
 
