@@ -149,7 +149,7 @@
 
 /* content */
 
-code {
+.page-content code {
   font-family: var(--monospace);
   font-size: .9em;
 }
@@ -158,36 +158,36 @@ code {
   padding: 20px;
 }
 
-:not(pre) > code {
+.page-content :not(pre) > code {
   background-color: var(--code-bg);
   padding: 2px 5px;
   border-radius: 2px;
 }
 
-blockquote {
+.page-content blockquote {
   border-left: 6px solid #ddd;
   margin-left: 0;
   padding-left: 10px;
   color: #aaa;
 }
 
-kbd {
+.page-content kbd {
   color: #666;
   border: 1px solid #ccc;
   padding: 1px 5px;
   border-radius: 2px;
 }
 
-table {
+.page-content table {
   border-collapse: collapse;
 }
 
-td, th {
+.page-content td, th {
   border: 1px solid #DDD;
   padding: 2px 5px;
 }
 
-th {
+.page-content th {
   font-weight: normal;
   background-color: #F9F9F9;
 }
