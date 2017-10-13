@@ -10,19 +10,12 @@
     <p class="description">{{ .Site.Params.Description | emojify }}</p>
 
     <div class="home-actions">
-        {{- with index ( where .Site.Pages "Params.isindex" "!=" true ) 0 -}}
-        <div class="latest-row">
-            Checkout my last {{ .Section }}: <a href="{{ .URL }}">{{ .Title }}</a>
-        </div>
-        {{ end -}}
-
-        <div class="nav-row">
-            Browse: {{ partial "nav" ( dict "menus" .Site.Menus.home ) -}}
-        </div>
-
-        {{- if not .Site.Params.disablesearch -}}
-        <div class="search-row">Or look for <input class="search" type="search" placeholder="something…"></div>
-        {{ end }}
+        {{- $post := where .Site.Pages "Kind" "page" -}}
+        {{- $post := where $post "Params.isindex" "!=" true}}
+        <p>Latest content:</p>
+        <ul>{{ range first 5 $post }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}</ul>
     </div>
 
 </div>
