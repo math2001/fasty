@@ -1,21 +1,32 @@
 {{- partial "header.html" . -}}
 
 <div class="home-content">
+    <div class="top-row">
     {{- with .Site.Params.Avatar -}}
-    <p class="avatar-row">
         <img class=avatar src="{{ with .vector }}{{ . }}{{ else }}{{ .raster }}{{ end }}" alt="{{ .alt }}">
-    </p>{{ end }}
-    <h1>{{ .Title }}</h1>
+    {{ end -}}
+    <h1 class="title">{{ .Title }}</h1>
+    </div>
 
     <p class="description">{{ .Site.Params.Description | emojify }}</p>
 
     <div class="home-actions">
         {{- $post := where .Site.Pages "Kind" "page" -}}
         {{- $post := where $post "Params.isindex" "!=" true}}
-        <p>Latest content:</p>
-        <ul>{{ range first 5 $post }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        <ul class="home-latest-contents">{{ range first 5 $post }}
+            <li>
+                <a class="home-latest-content" href="{{ .RelPermalink }}">
+                    <span class="home-latest-content-title">{{ .Title }}</span>
+                    <span class="home-latest-content-reading-time">~ {{ .ReadingTime }} min</span>
+                </a>
+            </li>
         {{ end }}</ul>
+        <div class="home-down-arrow"></div>
+        <nav class="home-browse">
+            <ul class="home-browse-links">{{ range .Site.Menus.home }}
+                <li><a class="home-browse-link" href="{{ .URL }}">{{ .Name }}</a></li>
+            {{ end }}</ul>
+        </nav>
     </div>
 
 </div>
