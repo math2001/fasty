@@ -53,33 +53,6 @@ loadCSS([
 <script src="{{ "/" | relURL }}js/highlight.pack.js" async onload="hljs.initHighlightingOnLoad()"></script>
 {{- end -}}
 
-{{- if .Params.repository -}}
-{{- if eq .Section "project" -}}
-<script>
-    fetch('https://api.github.com/repos/{{ .Site.Params.github_username }}/{{ .Params.repository }}')
-    .then(response => response.json())
-    .then(repository => {
-        document.querySelector('#repository-stargazers-count').textContent = repository.stargazers_count
-    })
-</script>
-{{- end -}}
-{{- end -}}
-
-
-{{- if and ( isset .Site.Params "githubcommentsrepo" ) ( eq .Kind "page" ) }}
-{{- with .Params.CommentsIssueId }}
-<script onload="loadGithubCommentsFrom('{{ $.Site.Params.githubcommentsrepo }}', {{ . }}, '{{ "/js/showdown.js" | relURL }}')" src="{{ "/js/github-comments.js" | relURL }}" async></script>
-{{- else -}}
-<script>
-    document.querySelector('#page-comments').innerHTML = 
-    `<p class="page-comments-blocked">
-        <svg class="page-comments-padlock"><use href="#si-padlock"></svg>
-        Comments are blocked for this {{ .Section | safeJS }}
-    </p>`
-</script>
-{{ end -}}
-{{ end -}}
-
 {{ partial "google_analytics" . }}
 
 </body>
