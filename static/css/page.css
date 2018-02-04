@@ -83,13 +83,13 @@
 
 /* content */
 
-.page-content code {
+.page-content .highlight {
   font-family: var(--monospace);
   font-size: .9em;
 }
 
-.page-content pre code {
-  padding: 20px;
+.page-content .highlight {
+  padding: 10px 20px;
 }
 
 .page-content :not(pre) > code {
