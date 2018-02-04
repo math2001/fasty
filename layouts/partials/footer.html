@@ -49,10 +49,6 @@ loadCSS([
 ])
 </script>
 
-{{- if eq .Kind "page" -}}
-<script src="{{ "/" | relURL }}js/highlight.pack.js" async onload="hljs.initHighlightingOnLoad()"></script>
-{{- end -}}
-
 {{ partial "google_analytics" . }}
 
 </body>
