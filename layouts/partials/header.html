@@ -24,7 +24,7 @@
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
     {{- partial "loadcss" (dict "Dot" . "css" "common") -}}
     {{- if eq .Kind "page" -}}
-        {{- partial "loadcss" (dict "Dot" . "css" "colorschemes/tomorrow-night")}}
+        {{- partial "loadcss" (dict "Dot" . "css" "ocean")}}
         {{- partial "loadcss" (dict "Dot" . "css" "page")}}
     {{- else if .IsHome -}}
         {{- partial "loadcss" (dict "Dot" . "css" "home") -}}
