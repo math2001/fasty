@@ -1,12 +1,12 @@
 {{ partial "header" . }}
 
 <div class="terms-top">
-    <h1>{{ .Data.Plural | title }}</h1>
+    <h1>{{ .Data.Plural | title }} <small>({{ len .Data.Terms }})</small></h1>
 </div>
 
 <div class="terms-content">
     <ul class="{{ .Data.Plural }} terms-{{ .Data.Plural }}">
-        {{ range .Data.Terms.Alphabetical }}
+        {{ range .Data.Terms.ByCount }}
         <li>({{ .Count }}) <a href="{{ .Name | urlize }}">{{ .Name }}</a></li>
         {{ end  }}
     </ul>

@@ -42,9 +42,3 @@
 .list-link:hover {
   color: var(--purple)
 }
-
-.list-content-reading-time {
-  font-size: 80%;
-  opacity: .8;
-  font-weight: normal;
-}
