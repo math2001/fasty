@@ -8,12 +8,8 @@
   margin-left: 10px;
 }
 
-.page-categories {
-  margin-top: 0;
-}
-
-.page-categories, .page-tags,
-.page-categories li, .page-tags li {
+.page-tags,
+.page-tags li {
   display: inline-block;
 }
 
@@ -78,6 +74,11 @@
 
 .page-read-other {
   margin-top: 40px;
+}
+
+.page-date {
+  color: hsla(230, 4%, 48%, 1);
+  font-style: italic;
 }
 
 /* content */

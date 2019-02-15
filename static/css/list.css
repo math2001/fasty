@@ -27,14 +27,8 @@
   flex-wrap: wrap;
 }
 
-.list-content-tags,
 .list-content-tags li {
   display: inline-block;
-}
-
-.list-list .categories {
-  display: inline-block;
-  font-size: 80%;
 }
 
 .list-link {
@@ -52,4 +46,5 @@
 .list-content-reading-time {
   font-size: 80%;
   opacity: .8;
+  font-weight: normal;
 }

@@ -2,13 +2,9 @@
 
 <div class="page-top">
     <h1 class="page-title">{{ .Title }}</h1>
-    {{- with .Params.Categories }}
-    <ul class="page-categories categories">
-        {{- range . }}
-        <li><a href="{{ "/categories/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-        {{- end }}
-    </ul>
-    {{ end }}
+
+    <p class="page-date">{{ dateFormat "2 January 2006" .Date }}</p>
+
     <ul class="page-tags tags">
         {{- range .Params.Tags }}
         <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
@@ -34,7 +30,6 @@
 <section class="page-content">{{ .Content }}</section>
 
 <div class="page-bottom">
-    <p class="page-date">Published on {{ dateFormat "Monday 2 January 2006" .Date }}</p>
     <ul class="page-share-list">
         <li>
             <a href="{{ print "https://twitter.com/intent/tweet?" ( querify "text" $.Title "url" $.Permalink ) | safeURL }}" target="_blank"
