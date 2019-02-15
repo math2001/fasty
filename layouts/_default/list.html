@@ -17,7 +17,7 @@
                 </h3>
                 {{- with .Params.Tags }}
                 <ul class="list-content-tags tags">
-                    {{- range first 2 .  }}
+                    {{- range .  }}
                     <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
                     {{- end }}
                 </ul>
