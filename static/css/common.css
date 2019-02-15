@@ -62,6 +62,20 @@ main {
 
 .tags { font-family: var(--monospace); }
 
+.page-content :not(pre) > code,
+.list-summary code {
+  background-color: var(--code-bg);
+  padding: 2px 5px;
+  border-radius: 2px;
+}
+.page-content kbd,
+.list-summary kbd {
+  color: #666;
+  border: 1px solid #ccc;
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
 .tags {
   list-style: none;
   padding: 0;
@@ -155,6 +169,10 @@ footer {
 
 .center {
   text-align: center;
+}
+
+.align-right {
+  text-align: right;
 }
 
 .footer-bottom::before {

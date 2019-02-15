@@ -20,12 +20,15 @@
 }
 
 .list-content {
-  padding: 10px 0px;
-  display: flex;
+  padding: 0px;
+/*  display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+*/
+  display: block;
 }
+
 
 .list-content-tags li {
   display: inline-block;
@@ -41,4 +44,13 @@
 
 .list-link:hover {
   color: var(--purple)
+}
+
+.list-summary {
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.list-summary img {
+  max-width: 100%;
 }
