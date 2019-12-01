@@ -4,10 +4,10 @@
     <div class="footer-splits">
         <div class="footer-split">
             <h4 class="footer-split-title">About me</h4>
-            {{ .Site.Params.Bio | markdownify | emojify }}
+            {{ .Site.Params.Footerbio | markdownify | emojify }}
         </div>
         <div class="footer-split">
-            <h4 class="footer-split-title">Browse by</h4>
+            <h4 class="footer-split-title">Browse</h4>
             <ul>{{ range .Site.Menus.footer }}
                 <li><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
             {{ end }}</ul>

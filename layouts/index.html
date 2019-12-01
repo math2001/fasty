@@ -1,35 +1,62 @@
 {{- partial "header.html" . -}}
 
-<div class="home-content">
-    <div class="top-row">
-    {{- with .Site.Params.Avatar -}}
-        <img class=avatar src="{{ with .vector }}{{ . }}{{ else }}{{ .raster }}{{ end }}" alt="{{ .alt }}">
-    {{ end -}}
-    <h1 class="title">{{ .Title }}</h1>
-    </div>
+<main class="home-main">
+    <section class="home-header">
+        {{- with .Site.Params.Avatar -}}
+        <img class="home-header-avatar" src="{{ with .vector }}{{ . }}{{ else }}{{ .raster }}{{ end }}" alt="{{ .alt }}">
+        {{ end -}}
+        <h1 class="home-header-title">{{ .Title }}</h1>
+    </section>
 
-    <p class="description">{{ .Site.Params.Description | emojify }}</p>
+    <section class="home-about">
+        <img class="home-about-avatar" src="{{ .Site.Params.avatar.vector }}" alt="{{ .Site.Params.avatar.alt }}">
+        <h2 class="home-about-name">{{ .Site.Params.Home.Name }}</h2>
+        <p class="home-about-bio">{{ .Site.Params.Home.Bio }}</p>
+    </section>
 
-    <div class="home-actions">
-        {{- $post := where .Site.Pages "Kind" "page" -}}
-        {{- $post := where $post "Params.isindex" "!=" true}}
-        <ul class="home-latest-contents">{{ range first 5 $post }}
-            <li>
-                <a class="home-latest-content" href="{{ .RelPermalink }}">
-                    <span class="home-latest-content-title">{{ .Title }}</span>
-                    <span class="home-latest-content-reading-time">~ {{ .ReadingTime }} min</span>
-                </a>
-            </li>
-        {{ end }}</ul>
-        <div class="home-down-arrow"></div>
-        <nav class="home-browse">
-            <ul class="home-browse-links">{{ range .Site.Menus.home }}
-                <li><a class="home-browse-link" href="{{ .URL }}">{{ .Name }}</a></li>
-            {{ end }}</ul>
-        </nav>
-    </div>
+    <section class="home-links">
+        <ul>
+            {{ range .Site.Sections }}
+            <li class="home-links-link"><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
+            {{ end }}
+        </ul>
+    </section>
 
-</div>
+    <section class="home-last-entries">
+
+        {{ range .Site.Sections }}
+        <article class="home-entry">
+            <!-- <h2 class="home-section-name">Last {{ .Name | singularize | lower }}</h2> -->
+            <!-- {{ .Content }} -->
+            {{ range first 1 ( $.Site.GetPage "section" .Section ).Pages }}
+            <h3 class='list-title'><a class=list-link href="{{ .RelPermalink }}">
+                    {{ .Title }}</a>
+                <small class="list-content-reading-time"
+                       title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
+            </h3>
+            {{- with .Params.Tags }}
+            <ul class="list-content-tags tags">
+                {{- range .  }}
+                <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
+                {{- end }}
+            </ul>
+            {{- end }}
+            <div class="list-summary">{{ .Summary }}</div>
+            {{ if .Truncated }}
+            <p class='align-right'>
+            <a class="list-readmore" href="{{ .RelPermalink }}">Keep reading this {{ .Section | singularize | lower }} →</a>
+            </p>
+            {{ end }}
+            {{ end }}
+        </article>
+        {{ end }}
+    </section>
+
+    <section class="home-closing">
+        {{ .Site.Params.Homeclosing | markdownify }}
+    </section>
+
+</main>
 
 {{- partial "footer.html" . -}}
 

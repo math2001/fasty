@@ -23,6 +23,7 @@
 
     <link rel=icon type=image/png href='{{ "/" | relURL }}{{ with .Site.Params.favicon }}{{ . }}{{- else -}}{{ .Site.Params.avatar.raster }}{{ end }}'>
     <title>{{ .Title }}{{ if not .IsHome }} - {{ .Site.Title }}{{ end }}</title>
+
     {{- partial "loadcss" (dict "Dot" . "css" "common") -}}
     {{- if eq .Kind "page" -}}
         {{- partial "loadcss" (dict "Dot" . "css" "ocean")}}
@@ -35,6 +36,9 @@
         {{- partial "loadcss" (dict "Dot" . "css" "terms") -}}
     {{ end -}}
     {{- if not .IsHome }}{{ partial "loadcss" (dict "Dot" . "css" "header") }}{{ end }}
+    {{ if .IsHome }}
+        {{- partial "loadcss" (dict "Dot" . "css" "list") -}}
+    {{ end }}
 
 </head>
 <body>
@@ -46,8 +50,8 @@
             <h2 class="header-brand"><a href="{{ "/" | relURL }}">{{ .Site.Title }}</a></h2>
             <nav class="header-nav">
                 <ul>
-                    {{ range .Site.Menus.main }}
-                    <li class="header-nav-item"><a href="{{ .URL | relURL }}">{{ .Name }}</a></li>
+                    {{ range .Site.Sections }}
+                    <li class="header-nav-item"><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
                     {{ end }}
                 </ul>
             </nav>
@@ -55,6 +59,3 @@
     </header>
     {{- end }}
     <main>
-    {{ if not .IsHome }}
-        <span id="show-header" class="show-header"></span>
-    {{ end }}
