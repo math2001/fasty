@@ -1,9 +1,0 @@
-<nav class="nav{{ with .extra_css_class }} {{ . }}{{ end }}">
-    <ul class="nav-list">
-        {{ range .menus -}}
-        {{- if eq (string .Pre) "|" }}<li class="nav-list-item nav-separator"></li>
-        {{ end -}}
-        <li class="nav-list-item"><a href="{{ .URL }}">{{ .Name }}</a></li>
-        {{ end }}
-    </ul>
-</nav>
