@@ -48,7 +48,12 @@ main {
 
 .home-links ul {
   list-style: none;
-  padding: 0;
+  padding: 0 16px;
+  display: inline-block;
+}
+.home-links ul:not(:last-child) {
+  height: 100%;
+  border-right: 3px solid var(--border-color);
 }
 
 .home-links-link {

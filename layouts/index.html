@@ -16,6 +16,11 @@
 
     <section class="home-links">
         <ul>
+            {{ range .Site.Params.Home.links }}
+            <li class="home-links-link"><a href="{{ .url }}">{{ .name }}</a></li>
+            {{ end }}
+        </ul>
+        <ul>
             {{ range .Site.Sections }}
             <li class="home-links-link"><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
             {{ end }}
@@ -53,7 +58,7 @@
     </section>
 
     <section class="home-closing">
-        {{ .Site.Params.Homeclosing | markdownify }}
+        {{ .Site.Params.Home.Closing | markdownify }}
     </section>
 
 </main>
