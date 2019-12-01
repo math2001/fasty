@@ -1,4 +1,5 @@
-{{- if in ( printf "%s" ( .Dot.URL | absURL ) ) "localhost:1313" -}}
+{{/* A debug feature which links directly to the CSS file (so that we can reload straight off, and don't have to recompile) */}}
+{{- if in ( printf "%s" ( .Dot.Permalink | absURL ) ) "localhost:1313" -}}
 <link rel="stylesheet" href="{{- (print "/css/" .css ".css") | relURL -}}">
 {{- else -}}
 <style>
