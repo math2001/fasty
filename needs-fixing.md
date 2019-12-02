@@ -18,3 +18,5 @@
 - [ ] remove google analytics
 - [ ] CV!!
 - [ ] the read more links should be closer to the above than to the next one
+- [ ] in the header, the current section should be emphasized (de-emphasize the
+  other sections)

@@ -21,8 +21,6 @@ a {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
   font-family: Roboto Slab, Roboto, Calibri, Corbel, sans-serif;
   margin: 0;
   padding: 0;
