@@ -27,8 +27,6 @@
 
     {{ range .Site.Sections }}
     <article class="home-entry">
-      <!-- <h2 class="home-section-name">Last {{ .Name | singularize | lower }}</h2> -->
-      <!-- {{ .Content }} -->
       {{ range first 1 ( $.Site.GetPage "section" .Section ).Pages }}
       <h3 class='list-title'><a class=list-link href="{{ .RelPermalink }}">
           {{ .Title }}</a>
@@ -44,8 +42,8 @@
       {{- end }}
       <div class="list-summary">{{ .Summary }}</div>
       {{ if .Truncated }}
-      <p class='align-right'>
-      <a class="list-readmore" href="{{ .RelPermalink }}">Keep reading this {{ .Section | singularize | lower }} →</a>
+      <p class="list-readmore">
+      <a href="{{ .RelPermalink }}">Keep reading this {{ .Section | singularize | lower }} →</a>
       </p>
       {{ end }}
       {{ end }}

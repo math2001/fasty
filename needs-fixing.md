@@ -1,3 +1,4 @@
+- [ ] the title is way too crowded (title, date, tags, draft). Find a solution!
 - [ ] the links to article/post/projects. Maybe below last entries. They need
   to be more "special" than just links. Maybe also have something saying "Find
   more ..."
@@ -15,8 +16,9 @@
   an icon
 - [ ] on the home page, the title should be a link pointing to /
 - [ ] remove google analytics
-- [ ] the read more links should be closer to the above than to the next one
 - [ ] in the header, the current section should be emphasized (de-emphasize the
+- [ ] listing of post should be partial
+- [x] the read more links should be closer to the above than to the next one
   other sections)
 - [x] CV!!
 - [x] maybe display the site's logo in the header?

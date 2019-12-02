@@ -19,13 +19,13 @@
   padding: 0;
 }
 
-.list-content {
+.list-item {
   padding: 0px;
   display: block;
+  margin: 48px 0;
 }
 
-
-.list-content-tags li {
+.list-item-tags li {
   display: inline-block;
 }
 
@@ -38,7 +38,7 @@
 }
 
 .list-link:hover {
-  color: var(--purple)
+  color: var(--purple);
 }
 
 .list-summary {
@@ -48,4 +48,10 @@
 
 .list-summary img {
   max-width: 100%;
+}
+
+.list-readmore {
+  text-align: right;
+  margin-top: 4px;
+  margin-bottom: 16px;
 }
