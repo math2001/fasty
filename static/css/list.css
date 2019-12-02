@@ -11,3 +11,7 @@
   max-width: 100%;
   margin: auto;
 }
+
+/* the style for entries is in common.css because it is also used on the home
+ * page
+ */
