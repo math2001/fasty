@@ -17,3 +17,4 @@
 - [ ] on the home page, the title should be a link pointing to /
 - [ ] remove google analytics
 - [ ] CV!!
+- [ ] the read more links should be closer to the above than to the next one

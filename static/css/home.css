@@ -25,11 +25,13 @@ main {
 .home-about {
   text-align: center;
   width: 512px;
+  max-width: 100%;
   margin: auto;
 }
 
 .home-about-avatar {
   width: 192px;
+  max-width: 100%;
   display: block;
   margin: 12px auto;
 }
@@ -78,5 +80,6 @@ main {
 .home-closing {
   text-align: center;
   width: 512px;
+  max-width: 100%;
   margin: auto;
 }
