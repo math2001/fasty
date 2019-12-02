@@ -42,7 +42,7 @@
 
 .home-last-entries {
   max-width: 100%;
-  width: 978px;
+  width: var(--content-width);
   margin: auto;
 
   display: flex;
@@ -51,7 +51,7 @@
 }
 
 .home-entry {
-  max-width: 384px;
+  max-width: calc(var(--content-width) / 2 - 20px);
 }
 
 .home-closing {

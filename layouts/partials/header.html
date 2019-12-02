@@ -45,25 +45,27 @@
   <body>
     {{- partial "single-svgs" . -}}
     <header class="header">
-      <h2 class="header-brand">
-        {{ with .Site.Params.logo }}
-        <img src="{{ .src }}" alt="{{ .alt }}" class="header-brand-logo">
-        {{ end }}
-        <a href="{{ "/" | relURL }}" class="header-brand-title">{{ .Site.Title }}</a>
-      </h2>
-      {{- if .IsHome -}}
-      <style>
-.header {
+      <div class="header-inner">
+        <h2 class="header-brand">
+          {{ with .Site.Params.logo }}
+          <img src="{{ .src }}" alt="{{ .alt }}" class="header-brand-logo">
+          {{ end }}
+          <a href="{{ "/" | relURL }}" class="header-brand-title">{{ .Site.Title }}</a>
+        </h2>
+        {{ if .IsHome }}
+        <style>
+.header-inner {
   justify-content: center;
 }
-      </style>
-      {{- else -}}
-      <nav class="header-nav">
-        <ul>
-          {{ range .Site.Sections }}
-          <li class="header-nav-item"><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
-          {{ end }}
-        </ul>
-      </nav>
-      {{- end }}
+        </style>
+        {{ else }}
+        <nav class="header-nav">
+          <ul>
+            {{ range .Site.Sections }}
+            <li class="header-nav-item"><a href="{{ .RelPermalink }}">{{ .Name }}</a></li>
+            {{ end }}
+          </ul>
+        </nav>
+        {{- end }}
+      </div>
     </header>

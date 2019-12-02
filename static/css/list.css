@@ -7,7 +7,7 @@
 }
 
 .list-window {
-  width: 750px;
+  width: var(--content-width);
   margin: auto;
   max-width: 100%;
 }
@@ -16,16 +16,11 @@
   outline: none;
   padding: 0;
   list-style: none;
-  padding: 0 10px;
+  padding: 0;
 }
 
 .list-content {
   padding: 0px;
-/*  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-*/
   display: block;
 }
 
