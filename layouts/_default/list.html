@@ -5,31 +5,10 @@
     <div class="list-description">{{ .Content | emojify }}</div>
 </div>
 
-<div class="list-window">
-    <ul class="list-list">
-        {{ range .Data.Pages.ByDate.Reverse }}
-        <li class="list-item">
-              <h3 class='list-title'><a class=list-link href="{{ .RelPermalink }}">
-                  {{ .Title }}</a>
-                  <small class="list-item-reading-time"
-                      title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
-              </h3>
-              {{- with .Params.Tags }}
-              <ul class="list-item-tags tags">
-                  {{- range .  }}
-                  <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-                  {{- end }}
-              </ul>
-              {{- end }}
-              <div class="list-summary">{{ .Summary }}</div>
-              {{ if .Truncated }}
-              <p class="list-readmore">
-                  <a href="{{ .RelPermalink }}">Read more →</a>
-              </p>
-              {{ end }}
-        </li>
-        {{ end }}
-    </ul>
-</div>
+<section class="list-entries">
+  {{ range .Data.Pages.ByDate.Reverse }}
+  {{ partial "entry.html" . }}
+  {{ end }}
+</section>
 
 {{- partial "footer.html" . -}}

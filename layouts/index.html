@@ -24,30 +24,10 @@
   </section>
 
   <section class="home-last-entries">
-
     {{ range .Site.Sections }}
-    <article class="home-entry">
       {{ range first 1 ( $.Site.GetPage "section" .Section ).Pages }}
-      <h3 class='list-title'><a class=list-link href="{{ .RelPermalink }}">
-          {{ .Title }}</a>
-        <small class="list-content-reading-time"
-               title="{{ .WordCount }} words">(~ {{ .ReadingTime }} min)</small>
-      </h3>
-      {{- with .Params.Tags }}
-      <ul class="list-content-tags tags">
-        {{- range .  }}
-        <li><a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a></li>
-        {{- end }}
-      </ul>
-      {{- end }}
-      <div class="list-summary">{{ .Summary }}</div>
-      {{ if .Truncated }}
-      <p class="list-readmore">
-      <a href="{{ .RelPermalink }}">Keep reading this {{ .Section | singularize | lower }} →</a>
-      </p>
+        {{ partial "entry.html" . }}
       {{ end }}
-      {{ end }}
-    </article>
     {{ end }}
   </section>
 

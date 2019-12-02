@@ -1,0 +1,25 @@
+{{/* entries or the items in a list (like in /articles/ or on the home page) */}}
+
+<article class="entry">
+  <h3 class="entry-title">
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    <small class="entry-title-readingtime" title="{{ .WordCount }} words">
+      (~ {{ .ReadingTime }} min)
+    </small>
+  </h3>
+  <ul class="entry-tags tags">
+    {{ range .Params.Tags }}
+    <li class="entry-tags-tag">
+      <a href="/tags/{{ . | urlize }}">{{ . }}</a>
+    </li>
+    {{ end }}
+  </ul>
+  <div class="entry-summary">
+    {{ .Summary }}
+  </div>
+  {{ if .Truncated }}
+  <p class="entry-readmore">
+    <a href="{{ .RelPermalink }}">Keep reading this {{ .Section | singularize | lower }} →</a>
+  </p>
+  {{ end }}
+</article>

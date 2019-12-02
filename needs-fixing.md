@@ -11,13 +11,14 @@
 - [ ] listing should show the date as well
 - [ ] the background of pre should be light, slightly blueish. Maybe even
   remove syntax highlighting
-- [ ] tags shouldn't be just dull grey. Give them some hue...
 - [ ] remove facebook and dev.to sharing link. Twitter's should be a badge, not
   an icon
 - [ ] on the home page, the title should be a link pointing to /
 - [ ] remove google analytics
 - [ ] in the header, the current section should be emphasized (de-emphasize the
-- [ ] listing of post should be partial
+- [x] tags shouldn't be just dull grey. Give them some hue, and make them
+  closer to the title
+- [x] listing of post should be partial
 - [x] the read more links should be closer to the above than to the next one
   other sections)
 - [x] CV!!

@@ -50,7 +50,7 @@
   justify-content: space-around;
 }
 
-.home-entry {
+.entry {
   max-width: calc(var(--content-width) / 2 - 20px);
 }
 
