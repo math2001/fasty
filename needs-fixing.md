@@ -14,8 +14,8 @@
 - [ ] remove facebook and dev.to sharing link. Twitter's should be a badge, not
   an icon
 - [ ] on the home page, the title should be a link pointing to /
-- [ ] remove google analytics
 - [ ] in the header, the current section should be emphasized (de-emphasize the
+- [x] remove google analytics
 - [x] tags shouldn't be just dull grey. Give them some hue, and make them
   closer to the title
 - [x] listing of post should be partial
