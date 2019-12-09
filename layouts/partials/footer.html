@@ -50,8 +50,9 @@ loadCSS([
 
 <!-- Fathom - simple website analytics - https://github.com/usefathom/fathom -->
 <script>
-    if (!location.href.includes('localhost') {
-        (function(f, a, t, h, o, m){
+    if (!location.href.includes('localhost')) {
+        console.log("send tracking!")
+        ;(function(f, a, t, h, o, m){
             a[h]=a[h]||function(){
                 (a[h].q=a[h].q||[]).push(arguments)
             };
@@ -62,7 +63,7 @@ loadCSS([
         })(document, window, '//math2001-fathom.herokuapp.com/tracker.js', 'fathom');
         fathom('set', 'siteId', 'WAYNG');
         fathom('trackPageview');
-    })
+    }
 </script>
 <!-- / Fathom -->
 
